@@ -126,6 +126,11 @@ p {
 	transition: background-color 0.2s ease,
 				color 0.2s ease;
 }
+.wordcloud {
+	height: 400px;
+	margin: 0 auto;
+	text-align: center;
+}
 .canvas3 {
 	margin-top: 20px;
 	display:block;
