@@ -71,7 +71,7 @@ System.register(['angular2/core', './post.service'], function(exports_1, context
                     core_1.Component({
                         selector: 'post-list',
                         templateUrl: 'app/templates/post_list.component.html',
-                        styleUrls: ['/app/css/post_list.component.html']
+                        styleUrls: ['/app/css/post_list.component.css']
                     }), 
                     __metadata('design:paramtypes', [post_service_1.PostService])
                 ], PostListComponent);
