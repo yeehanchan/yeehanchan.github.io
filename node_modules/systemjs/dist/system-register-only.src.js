@@ -1,5 +1,5 @@
 /*
- * SystemJS v0.19.22
+ * SystemJS v0.19.24
  */
 (function(__global) {
 
@@ -37,11 +37,35 @@
   })();
 
   function addToError(err, msg) {
-    if (err instanceof Error)
-      err.message = err.message + '\n\t' + msg;
+    // parse the stack removing loader code lines for simplification
+    if (!err.originalErr) {
+      var stack = (err.stack || err.message || err).split('\n');
+      var newStack = [];
+      for (var i = 0; i < stack.length; i++) {
+        if (typeof $__curScript == 'undefined' || stack[i].indexOf($__curScript.src) == -1)
+          newStack.push(stack[i]);
+      }
+    }
+
+    var newMsg = (newStack ? newStack.join('\n\t') : err.message) + '\n\t' + msg;
+
+    // Convert file:/// URLs to paths in Node
+    if (!isBrowser)
+      newMsg = newMsg.replace(isWindows ? /file:\/\/\//g : /file:\/\//g, '');
+
+    var newErr = new Error(newMsg, err.fileName, err.lineNumber);
+    
+    // Node needs stack adjustment for throw to show message
+    if (!isBrowser)
+      newErr.stack = newMsg;
+    // Clearing the stack stops unnecessary loader lines showing
     else
-      err += '\n\t' + msg;
-    return err;
+      newErr.stack = null;
+    
+    // track the original error
+    newErr.originalErr = err.originalErr || err;
+
+    return newErr;
   }
 
   function __eval(source, debugName, context) {
@@ -1260,7 +1284,10 @@ function warn(msg) {
         var s = document.createElement('script');
         
         s.async = true;
-        
+
+        if (load.metadata.crossOrigin)
+          s.crossOrigin = load.metadata.crossOrigin;
+
         if (load.metadata.integrity)
           s.setAttribute('integrity', load.metadata.integrity);
 
@@ -1584,8 +1611,8 @@ function createEntry() {
   }
 
   // module binding records
-  function Module() {}
-  defineProperty(Module, 'toString', {
+  function ModuleRecord() {}
+  defineProperty(ModuleRecord, 'toString', {
     value: function() {
       return 'Module';
     }
@@ -1595,7 +1622,7 @@ function createEntry() {
     return moduleRecords[name] || (moduleRecords[name] = {
       name: name,
       dependencies: [],
-      exports: new Module(), // start from an empty module and extend
+      exports: new ModuleRecord(), // start from an empty module and extend
       importers: []
     });
   }
@@ -1740,7 +1767,12 @@ function createEntry() {
           continue;
         return getModule(entry.normalizedDeps[i], loader);
       }
-      throw new Error('Module ' + name + ' not declared as a dependency.');
+      // try and normalize the dependency to see if we have another form
+      var nameNormalized = loader.normalizeSync(name, entry.name);
+      if (indexOf.call(entry.normalizedDeps, nameNormalized) != -1)
+        return getModule(nameNormalized, loader);
+
+      throw new Error('Module ' + name + ' not declared as a dependency of ' + entry.name);
     }, exports, module);
     
     if (output)
@@ -1750,7 +1782,7 @@ function createEntry() {
     exports = module.exports;
 
     // __esModule flag treats as already-named
-    if (exports && exports.__esModule)
+    if (exports && (exports.__esModule || exports instanceof Module))
       entry.esModule = exports;
     // set module as 'default' export, then fake named exports by iterating properties
     else if (entry.esmExports && exports !== __global)
@@ -2005,10 +2037,7 @@ function createEntry() {
 hookConstructor(function(constructor) {
   return function() {
     constructor.apply(this, arguments);
-
-    // prepare amd define
-    if (this.has('@@amd-helpers'))
-      this.get('@@amd-helpers').createDefine();
+    __global.define = this.amdDefine;
   };
 });
 
@@ -2020,7 +2049,7 @@ hook('fetch', function(fetch) {
 });System = new SystemJSLoader();
 
 __global.SystemJS = System;
-System.version = '0.19.22 Register Only';
+System.version = '0.19.24 Register Only';
   // -- exporting --
 
   if (typeof exports === 'object')

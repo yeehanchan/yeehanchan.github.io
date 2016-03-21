@@ -245,8 +245,8 @@ function createEntry() {
   }
 
   // module binding records
-  function Module() {}
-  defineProperty(Module, 'toString', {
+  function ModuleRecord() {}
+  defineProperty(ModuleRecord, 'toString', {
     value: function() {
       return 'Module';
     }
@@ -256,7 +256,7 @@ function createEntry() {
     return moduleRecords[name] || (moduleRecords[name] = {
       name: name,
       dependencies: [],
-      exports: new Module(), // start from an empty module and extend
+      exports: new ModuleRecord(), // start from an empty module and extend
       importers: []
     });
   }
@@ -401,7 +401,12 @@ function createEntry() {
           continue;
         return getModule(entry.normalizedDeps[i], loader);
       }
-      throw new Error('Module ' + name + ' not declared as a dependency.');
+      // try and normalize the dependency to see if we have another form
+      var nameNormalized = loader.normalizeSync(name, entry.name);
+      if (indexOf.call(entry.normalizedDeps, nameNormalized) != -1)
+        return getModule(nameNormalized, loader);
+
+      throw new Error('Module ' + name + ' not declared as a dependency of ' + entry.name);
     }, exports, module);
     
     if (output)
@@ -411,7 +416,7 @@ function createEntry() {
     exports = module.exports;
 
     // __esModule flag treats as already-named
-    if (exports && exports.__esModule)
+    if (exports && (exports.__esModule || exports instanceof Module))
       entry.esModule = exports;
     // set module as 'default' export, then fake named exports by iterating properties
     else if (entry.esmExports && exports !== __global)
