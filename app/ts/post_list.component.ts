@@ -1,27 +1,33 @@
 import {Component, OnInit} from 'angular2/core';
+import {Router,RouteParams} from 'angular2/router'
 import {Post} from './post';
 import {PostService} from './post.service'
 
 @Component({
-	selector: 'post-list',
 	templateUrl: 'app/templates/post_list.component.html',
-	styleUrls: ['/app/css/post_list.component.css']
+	styleUrls: ['app/css/post_list.component.css']
 })
-
 export class PostListComponent implements OnInit{
-	
 	public postlist : Post[];
+	public topicName: string;
 
-	constructor (private _postService: PostService) {
-		this.postlist = new Array<Post>();
+	constructor(
+		private _router: Router,
+		private _routeParams: RouteParams, 
+		private _postService: PostService) {
+			this.postlist = new Array<Post>();
 	}
 
   	errorMessage: string;
 
-  	ngOnInit() { this.getPostList(); }
+  	ngOnInit() {
+		this.topicName = decodeURI(this._routeParams.get('topic_name'));
+  		this.getPostList();
+  	}
+
   	getPostList() {
   		console.log('component getpostlist called');
-    	this._postService.getPostList()
+			this._postService.getPostList(this.topicName)
                      	 .subscribe(
                           	postlist => this.postlist = postlist,
                           	error => this.errorMessage = <any>error);

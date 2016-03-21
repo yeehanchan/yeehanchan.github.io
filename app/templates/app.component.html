@@ -1,3 +1,13 @@
-<base href="/">
-<a [routerLink]="['PostList']">Topic</a>
-<router-outlet></router-outlet>
+<!-- <nav>
+	<a [routerLink]="['Home']">Home</a>
+	<a [routerLink]="['Topic',{topic_name:'Bananas'}]">Topic</a>
+</nav> -->
+<div class="app">
+	<div class="navbar">
+		<div class="brand">LearnSomething</div>
+		<div class="signup">Sign Up</div>
+		<div class="login">Log In</div>
+	</div>
+
+	<router-outlet></router-outlet>
+</div>

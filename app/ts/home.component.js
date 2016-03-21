@@ -1,4 +1,4 @@
-System.register(['angular2/core', './post_list.component', 'angular2/http', './post.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,53 +10,42 @@ System.register(['angular2/core', './post_list.component', 'angular2/http', './p
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, post_list_component_1, http_1, post_service_1;
+    var core_1, router_1;
     var HomeComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (post_list_component_1_1) {
-                post_list_component_1 = post_list_component_1_1;
-            },
-            function (http_1_1) {
-                http_1 = http_1_1;
-            },
-            function (post_service_1_1) {
-                post_service_1 = post_service_1_1;
+            function (router_1_1) {
+                router_1 = router_1_1;
             }],
         execute: function() {
             HomeComponent = (function () {
-                function HomeComponent() {
+                function HomeComponent(_router) {
+                    this._router = _router;
                     this.url = "../../images/background2.png";
                 }
                 HomeComponent.prototype.changeBackground = function () {
-                    if (this.url == "../../images/background2.png") {
-                        this.url = "../../images/background2-2.jpg";
-                    }
-                    else {
-                        this.url = "../../images/background2.png";
-                    }
+                    this.url = this.url === "../../images/background2.png" ? "../../images/background2-2.jpg" : this.url = "../../images/background2.png";
                 };
                 HomeComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    setInterval(function () { _this.changeBackground(); }, 2000);
+                    setInterval(this.changeBackground, 2000);
+                };
+                HomeComponent.prototype.start = function (topic) {
+                    console.log("hi");
+                    console.log(topic);
+                    this._router.navigate(['/Topic', { topic_name: topic }]);
                 };
                 HomeComponent = __decorate([
                     core_1.Component({
-                        selector: 'home',
                         templateUrl: 'app/templates/home.component.html',
                         styleUrls: ['app/css/home.component.css'],
                         directives: [
-                            post_list_component_1.PostListComponent
+                            router_1.ROUTER_DIRECTIVES
                         ],
-                        providers: [
-                            http_1.HTTP_PROVIDERS,
-                            post_service_1.PostService
-                        ]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [router_1.Router])
                 ], HomeComponent);
                 return HomeComponent;
             }());

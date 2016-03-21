@@ -8,8 +8,8 @@ System.register([], function(exports_1, context_1) {
             Post = (function () {
                 function Post(newLink, newTitle, newTopic) {
                     this.url = newLink;
-                    this.topic = newTitle;
-                    this.title = newTopic;
+                    this.topic = newTopic;
+                    this.title = newTitle;
                 }
                 return Post;
             }());

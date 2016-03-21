@@ -1,12 +1,18 @@
+.header {
+	text-align: center;
+}
+
+
 .canvas1 {
 	height: 600px;
-	background: url("../../images/background.jpg");
-	background-size: 100% auto;
-	background-position: center bottom;
+	/*background: url("../../images/background.jpg");*/
+	/*background-size: 100% auto;*/
+	/*background-position: center bottom;*/
 	text-align: center;
 	color: #fdf9f3;
 }
-.navbar {
+
+/*.navbar {
 	padding: 20px;
 }
 .brand {
@@ -45,7 +51,7 @@
 .signup:hover {
 	color: white;
 	background-color: initial;
-}
+}*/
 .header {
 	font-size: 36px;
 	margin: 100px 0;
@@ -61,6 +67,12 @@
 	margin: 0 auto;
 }
 .search {
+    width: 100%;
+    padding: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.btn-search {
     background-color: #333;
     width: 100%;
     cursor: pointer;
@@ -81,7 +93,7 @@
 	    border-bottom-right-radius: 0;
 	    border-right: none;
 	}
-	.search {
+	.btn-search {
 		display: inline;
 	    margin-top: 0;
 	    float: right;

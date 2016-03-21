@@ -4,9 +4,11 @@ export class Post {
 	public score: number;
 	public topic: number;
 	public pk: number;
+	public vote: number;
+
 	constructor(newLink: string, newTitle: string, newTopic: number){
 		this.url = newLink;
-		this.topic = newTitle;
-		this.title= newTopic;
+		this.topic = newTopic;
+		this.title = newTitle;
 	}
 }

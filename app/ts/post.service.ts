@@ -8,19 +8,20 @@ import {Headers, RequestOptions} from 'angular2/http';
 export class PostService {
   constructor (private http: Http) {}
 
-  private _postlistUrl = 'http://education-project.herokuapp.com/topicLinks/Bananas/';  // URL to web api
-  private _addlinkUrl = 'http://education-project.herokuapp.com/links/';
-  private _updatelinkUrl = 'http://education-project.herokuapp.com/links/';
+  private _baseUrl = 'http://education-project.herokuapp.com/'
+  private _postlistUrl = this._baseUrl + 'topicLinks/';  // URL to web api
+  private _addlinkUrl = this._baseUrl + 'links/';
+  private _updatelinkUrl = this._baseUrl + 'links/';
 
-  getPostList () {
+  getPostList (topic_name) {
   	console.log("services get called")
-    return this.http.get(this._postlistUrl)
+    return this.http.get(this._postlistUrl+topic_name+'/')
                     .map(res => <Post[]> res.json())
                     .do(data => console.log(data))
                     .catch(this.handleError);
   }
   addPost(newLink:string, newTitle = "", newTopic=1) : Observable<Post>{
-    var newPost = new Post(newLink, newTopic, newTitle);
+    var newPost = new Post(newLink, newTitle, newTopic);
     console.log(newPost);
     let body = JSON.stringify(newPost);
     let headers = new Headers({ 'Content-Type': 'application/json' });

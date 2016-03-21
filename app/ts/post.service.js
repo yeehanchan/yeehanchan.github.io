@@ -31,13 +31,14 @@ System.register(['angular2/core', 'angular2/http', './post', 'rxjs/Observable'],
             PostService = (function () {
                 function PostService(http) {
                     this.http = http;
-                    this._postlistUrl = 'http://education-project.herokuapp.com/topicLinks/Bananas/'; // URL to web api
-                    this._addlinkUrl = 'http://education-project.herokuapp.com/links/';
-                    this._updatelinkUrl = 'http://education-project.herokuapp.com/links/';
+                    this._baseUrl = 'http://education-project.herokuapp.com/';
+                    this._postlistUrl = this._baseUrl + 'topicLinks/'; // URL to web api
+                    this._addlinkUrl = this._baseUrl + 'links/';
+                    this._updatelinkUrl = this._baseUrl + 'links/';
                 }
-                PostService.prototype.getPostList = function () {
+                PostService.prototype.getPostList = function (topic_name) {
                     console.log("services get called");
-                    return this.http.get(this._postlistUrl)
+                    return this.http.get(this._postlistUrl + topic_name + '/')
                         .map(function (res) { return res.json(); })
                         .do(function (data) { return console.log(data); })
                         .catch(this.handleError);
@@ -45,7 +46,7 @@ System.register(['angular2/core', 'angular2/http', './post', 'rxjs/Observable'],
                 PostService.prototype.addPost = function (newLink, newTitle, newTopic) {
                     if (newTitle === void 0) { newTitle = ""; }
                     if (newTopic === void 0) { newTopic = 1; }
-                    var newPost = new post_1.Post(newLink, newTopic, newTitle);
+                    var newPost = new post_1.Post(newLink, newTitle, newTopic);
                     console.log(newPost);
                     var body = JSON.stringify(newPost);
                     var headers = new http_2.Headers({ 'Content-Type': 'application/json' });

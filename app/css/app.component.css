@@ -1,14 +1,54 @@
-.background {
+/*.background {
 	background-color: white;
-	/*font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;*/
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+*/
+
+.app {
+	/*background-color: #333;*/
+	color: white;
 }
 
-body {
-	font-family: 'Source Sans Pro', sans-serif;
+/* Navbar */
+.navbar {
+	padding: 10px;
+	margin: 0;
 }
-h1, h2, h3 {
+
+.navbar .brand {
 	font-family: 'Source Serif Pro', serif;
+	font-size: 24px;
+	display: inline;
+	float: left;
+	padding: 6px 20px;
+	margin: 0;
 }
-p {
-	font-size: 18px;
+.navbar .signup, .navbar .login {
+	display: inline;
+	float:right;
+	padding: 10px 20px;
+	width: 100px;
+	text-align: center;
+}
+.navbar .login {
+	border: 2px solid white;
+}
+@media screen and (max-width: 350px) {
+	.navbar .login {
+		display: none;
+	}
+}
+.navbar .signup {
+	color: black;
+	background-color: white;
+	border: 2px solid white;
+}
+@media screen and (max-width: 450px) {
+	.navbar .signup {
+		display: none;
+	}
+}
+.navbar .signup:hover {
+	color: white;
+	background-color: initial;
 }

@@ -41,18 +41,17 @@ System.register(['angular2/core', 'angular2/router', './post_list.component', '.
                         selector: 'my-app',
                         templateUrl: 'app/templates/app.component.html',
                         styleUrls: ['app/css/app.component.css'],
-                        directives: [
-                            router_1.ROUTER_DIRECTIVES,
-                            post_list_component_1.PostListComponent
-                        ],
                         providers: [
                             http_1.HTTP_PROVIDERS,
                             post_service_1.PostService
-                        ]
+                        ],
+                        directives: [
+                            router_1.ROUTER_DIRECTIVES
+                        ],
                     }),
                     router_1.RouteConfig([
-                        { path: '/', name: 'Home', component: home_component_1.HomeComponent },
-                        { path: '/topic', name: 'PostList', component: post_list_component_1.PostListComponent }
+                        { path: '/home', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
+                        { path: '/topic/:topic_name/', name: 'Topic', component: post_list_component_1.PostListComponent }
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
