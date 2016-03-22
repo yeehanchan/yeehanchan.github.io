@@ -39,7 +39,7 @@ System.register(['angular2/core', 'angular2/router', './post.service'], function
                     var _this = this;
                     console.log('component getpostlist called');
                     this._postService.getPostList(this.topicName)
-                        .subscribe(function (postlist) { return _this.postlist = postlist; }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (postlist) { _this.postlist = postlist; _this.loaded = true; }, function (error) { return _this.errorMessage = error; });
                 };
                 PostListComponent.prototype.addPost = function (newLink, newTitle, newTopic) {
                     var _this = this;

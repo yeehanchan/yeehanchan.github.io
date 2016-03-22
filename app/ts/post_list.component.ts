@@ -10,6 +10,8 @@ import {PostService} from './post.service'
 export class PostListComponent implements OnInit{
 	public postlist : Post[];
 	public topicName: string;
+	public topicId: number;
+	public loaded: boolean;
 
 	constructor(
 		private _router: Router,
@@ -28,8 +30,8 @@ export class PostListComponent implements OnInit{
   	getPostList() {
   		console.log('component getpostlist called');
 			this._postService.getPostList(this.topicName)
-                     	 .subscribe(
-                          	postlist => this.postlist = postlist,
+				.subscribe(
+							postlist => { this.postlist = postlist; this.loaded = true },
                           	error => this.errorMessage = <any>error);
   	}
 

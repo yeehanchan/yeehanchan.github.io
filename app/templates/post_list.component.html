@@ -4,7 +4,7 @@
 			<li class="list-group-item title">
 				<h2>{{topicName}}</h2>
 			</li>
-			<li class="list-group-item no-links" *ngIf="postlist.length === 0">
+			<li class="list-group-item no-links" *ngIf="postlist.length === 0 && loaded">
 				Sorry, no links here yet.  Try adding one!
 			</li>
 			<li class="list-group-item post" *ngFor="#post of postlist">
