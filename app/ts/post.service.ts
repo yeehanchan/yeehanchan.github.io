@@ -22,7 +22,6 @@ export class PostService {
   }
   addPost(newLink:string, newTitle = "", newTopic=1) : Observable<Post>{
     var newPost = new Post(newLink, newTitle, newTopic);
-    console.log(newPost);
     let body = JSON.stringify(newPost);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });

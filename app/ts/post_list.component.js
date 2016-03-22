@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './post.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './topic.service', './post.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './post.service'], function
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, post_service_1;
+    var core_1, router_1, topic_service_1, post_service_1;
     var PostListComponent;
     return {
         setters:[
@@ -20,26 +20,39 @@ System.register(['angular2/core', 'angular2/router', './post.service'], function
             function (router_1_1) {
                 router_1 = router_1_1;
             },
+            function (topic_service_1_1) {
+                topic_service_1 = topic_service_1_1;
+            },
             function (post_service_1_1) {
                 post_service_1 = post_service_1_1;
             }],
         execute: function() {
             PostListComponent = (function () {
-                function PostListComponent(_router, _routeParams, _postService) {
+                function PostListComponent(_router, _routeParams, _postService, _topicService) {
                     this._router = _router;
                     this._routeParams = _routeParams;
                     this._postService = _postService;
+                    this._topicService = _topicService;
                     this.postlist = new Array();
                 }
                 PostListComponent.prototype.ngOnInit = function () {
                     this.topicName = decodeURI(this._routeParams.get('topic_name'));
                     this.getPostList();
+                    this.getTopic();
+                };
+                PostListComponent.prototype.getTopic = function () {
+                    var _this = this;
+                    this._topicService.getTopic(this.topicName)
+                        .subscribe(function (topic) { return _this.topic = topic; }, function (error) { return _this.errorMessage = error; });
                 };
                 PostListComponent.prototype.getPostList = function () {
                     var _this = this;
                     console.log('component getpostlist called');
                     this._postService.getPostList(this.topicName)
-                        .subscribe(function (postlist) { _this.postlist = postlist; _this.loaded = true; }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (postlist) {
+                        _this.postlist = postlist;
+                        _this.loaded = true;
+                    }, function (error) { return _this.errorMessage = error; });
                 };
                 PostListComponent.prototype.addPost = function (newLink, newTitle, newTopic) {
                     var _this = this;
@@ -80,7 +93,7 @@ System.register(['angular2/core', 'angular2/router', './post.service'], function
                         templateUrl: 'app/templates/post_list.component.html',
                         styleUrls: ['app/css/post_list.component.css']
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, post_service_1.PostService])
+                    __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, post_service_1.PostService, topic_service_1.TopicService])
                 ], PostListComponent);
                 return PostListComponent;
             }());

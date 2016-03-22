@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './post_list.component', './home.component', 'angular2/http', './post.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './post_list.component', './topic_list.component', './home.component', 'angular2/http', './post.service', './topic.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './post_list.component', '.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, post_list_component_1, home_component_1, http_1, post_service_1;
+    var core_1, router_1, post_list_component_1, topic_list_component_1, home_component_1, http_1, post_service_1, topic_service_1;
     var AppComponent;
     return {
         setters:[
@@ -23,6 +23,9 @@ System.register(['angular2/core', 'angular2/router', './post_list.component', '.
             function (post_list_component_1_1) {
                 post_list_component_1 = post_list_component_1_1;
             },
+            function (topic_list_component_1_1) {
+                topic_list_component_1 = topic_list_component_1_1;
+            },
             function (home_component_1_1) {
                 home_component_1 = home_component_1_1;
             },
@@ -31,6 +34,9 @@ System.register(['angular2/core', 'angular2/router', './post_list.component', '.
             },
             function (post_service_1_1) {
                 post_service_1 = post_service_1_1;
+            },
+            function (topic_service_1_1) {
+                topic_service_1 = topic_service_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -43,7 +49,8 @@ System.register(['angular2/core', 'angular2/router', './post_list.component', '.
                         styleUrls: ['app/css/app.component.css'],
                         providers: [
                             http_1.HTTP_PROVIDERS,
-                            post_service_1.PostService
+                            post_service_1.PostService,
+                            topic_service_1.TopicService
                         ],
                         directives: [
                             router_1.ROUTER_DIRECTIVES
@@ -51,7 +58,8 @@ System.register(['angular2/core', 'angular2/router', './post_list.component', '.
                     }),
                     router_1.RouteConfig([
                         { path: '/home', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
-                        { path: '/topic/:topic_name/', name: 'Topic', component: post_list_component_1.PostListComponent }
+                        { path: '/topic/:topic_name/', name: 'Topic', component: post_list_component_1.PostListComponent },
+                        { path: '/searchTopics/:search_string/', name: 'Search', component: topic_list_component_1.TopicListComponent }
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

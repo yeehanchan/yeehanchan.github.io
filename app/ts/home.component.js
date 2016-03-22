@@ -35,7 +35,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                 HomeComponent.prototype.start = function (topic) {
                     console.log("hi");
                     console.log(topic);
-                    this._router.navigate(['/Topic', { topic_name: topic }]);
+                    this._router.navigate(['/Search', { search_string: topic }]);
                 };
                 HomeComponent = __decorate([
                     core_1.Component({

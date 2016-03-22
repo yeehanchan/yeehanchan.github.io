@@ -28,12 +28,12 @@
 		</ul>
 		<div class="form-list add-post">
 			<input type="text" class="form-control item" #newTitle
-		  		(keyup.enter)="addPost(newURL.value,newTitle.value)"
+		  		(keyup.enter)="addPost(newURL.value,newTitle.value,topic.pk)"
 		  		placeholder="Title">
 			<input type="text" class="form-control item" #newURL
-		  		(keyup.enter)="addPost(newURL.value,newTitle.value)"
+		  		(keyup.enter)="addPost(newURL.value,newTitle.value,topic.pk)"
 		  		placeholder="URL">
-			<button class="item btn btn-primary btn-block buttons" (click)=addPost(newURL.value,newTitle.value)>Add Link</button>	
+			<button class="item btn btn-primary btn-block buttons" (click)=addPost(newURL.value,newTitle.value,topic.pk)>Add Link</button>	
 		</div>
 	</div>
 </div>

@@ -24,6 +24,6 @@ export class HomeComponent implements OnInit{
     start(topic: string) {
         console.log("hi");
         console.log(topic);
-        this._router.navigate(['/Topic', { topic_name: topic }]);
+        this._router.navigate(['/Search', { search_string: topic }]);
     }
 }

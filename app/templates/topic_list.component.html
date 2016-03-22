@@ -1,0 +1,23 @@
+<div class="topic-list">
+	<div class="margins link">
+		<ul class="list-group">
+			<li class="list-group-item title">
+				<h2>Search for: {{searchString}}</h2>
+			</li>
+			<li class="list-group-item no-topics" *ngIf="topicList.length === 0">
+				Sorry, no topic match your search.  Try adding one!
+			</li>
+			<li class="list-group-item topic" *ngFor="#topic of topicList">
+				<div class="body">
+					<h3 class="link" (click)="openTopic(topic.name)">{{topic.name}}</h3>
+				</div>
+			</li>
+		</ul>
+		<div class="form-list add-topic">
+			<input type="text" class="form-control item" #newTopicName
+		  		(keyup.enter)="addTopic(newTopicName.value)"
+		  		placeholder="Name">
+			<button class="item btn btn-primary btn-block buttons" (click)=addTopic(newTopicName.value)>Add Topic</button>	
+		</div>
+	</div>
+</div>

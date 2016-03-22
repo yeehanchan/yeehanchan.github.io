@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', './post', 'rxjs/Observable'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', './topic', 'rxjs/Observable'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,8 +10,8 @@ System.register(['angular2/core', 'angular2/http', './post', 'rxjs/Observable'],
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, post_1, Observable_1, http_2;
-    var PostService;
+    var core_1, http_1, topic_1, Observable_1, http_2;
+    var TopicService;
     return {
         setters:[
             function (core_1_1) {
@@ -21,64 +21,58 @@ System.register(['angular2/core', 'angular2/http', './post', 'rxjs/Observable'],
                 http_1 = http_1_1;
                 http_2 = http_1_1;
             },
-            function (post_1_1) {
-                post_1 = post_1_1;
+            function (topic_1_1) {
+                topic_1 = topic_1_1;
             },
             function (Observable_1_1) {
                 Observable_1 = Observable_1_1;
             }],
         execute: function() {
-            PostService = (function () {
-                function PostService(http) {
+            TopicService = (function () {
+                function TopicService(http) {
                     this.http = http;
                     this._baseUrl = 'http://education-project.herokuapp.com/';
-                    this._postlistUrl = this._baseUrl + 'topicLinks/'; // URL to web api
-                    this._addlinkUrl = this._baseUrl + 'links/';
-                    this._updatelinkUrl = this._baseUrl + 'links/';
+                    this._searchTopicUrl = this._baseUrl + 'search/';
+                    this._addTopicUrl = this._baseUrl + 'topics/';
+                    this._getTopicUrl = this._baseUrl + 'getTopic/';
                 }
-                PostService.prototype.getPostList = function (topic_name) {
+                TopicService.prototype.getTopicList = function (search_string) {
                     console.log("services get called");
-                    return this.http.get(this._postlistUrl + topic_name + '/')
+                    return this.http.get(this._searchTopicUrl + search_string + '/')
                         .map(function (res) { return res.json(); })
                         .do(function (data) { return console.log(data); })
                         .catch(this.handleError);
                 };
-                PostService.prototype.addPost = function (newLink, newTitle, newTopic) {
-                    if (newTitle === void 0) { newTitle = ""; }
-                    if (newTopic === void 0) { newTopic = 1; }
-                    var newPost = new post_1.Post(newLink, newTitle, newTopic);
-                    var body = JSON.stringify(newPost);
+                TopicService.prototype.getTopic = function (topicName) {
+                    return this.http.get(this._getTopicUrl + topicName + '/')
+                        .map(function (res) { return res.json(); })
+                        .catch(this.handleError);
+                };
+                TopicService.prototype.addTopic = function (newTopicName) {
+                    if (newTopicName === void 0) { newTopicName = ""; }
+                    var newTopic = new topic_1.Topic(newTopicName);
+                    var body = JSON.stringify(newTopic);
                     var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
                     var options = new http_2.RequestOptions({ headers: headers });
-                    return this.http.post(this._addlinkUrl, body, options)
+                    return this.http.post(this._addTopicUrl, body, options)
                         .map(function (res) { return res.json(); })
                         .do(function (data) { return console.log("add link", data); })
                         .catch(this.handleError);
                 };
-                PostService.prototype.updateLink = function (post) {
-                    var body = JSON.stringify(post);
-                    var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
-                    var options = new http_2.RequestOptions({ headers: headers,
-                        url: this._updatelinkUrl + post.pk + "/" });
-                    return this.http.put(this._updatelinkUrl, body, options)
-                        .map(function (res) { return res.json(); })
-                        .do(function (data) { return console.log("update link", data); })
-                        .catch(this.handleError);
-                };
-                PostService.prototype.handleError = function (error) {
+                TopicService.prototype.handleError = function (error) {
                     // in a real world app, we may send the error to some remote logging infrastructure
                     // instead of just logging it to the console
                     console.error(error);
                     return Observable_1.Observable.throw(error.json().error || 'Server error');
                 };
-                PostService = __decorate([
+                TopicService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [http_1.Http])
-                ], PostService);
-                return PostService;
+                ], TopicService);
+                return TopicService;
             }());
-            exports_1("PostService", PostService);
+            exports_1("TopicService", TopicService);
         }
     }
 });
-//# sourceMappingURL=post.service.js.map
+//# sourceMappingURL=topic.service.js.map
