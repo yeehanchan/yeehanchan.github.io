@@ -1,12 +1,12 @@
 System.register([], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var Post;
+    var Link;
     return {
         setters:[],
         execute: function() {
-            Post = (function () {
-                function Post(newLink, newTitle, newTopic) {
+            Link = (function () {
+                function Link(newLink, newTitle, newTopic) {
                     if (newLink.indexOf("//") === -1) {
                         newLink = "http://" + newLink;
                     }
@@ -14,19 +14,19 @@ System.register([], function(exports_1, context_1) {
                     this.topic = newTopic;
                     this.title = newTitle;
                 }
-                Post.prototype.domain = function () {
+                Link.prototype.domain = function () {
                     var myRegexp = new RegExp('(.*\/\/|)(.*?)(\/.*|)$');
                     var match = myRegexp.exec(this.url);
                     return match[2];
                 };
-                Post.cast = function (post) {
-                    post.domain = Post.prototype.domain;
-                    return post;
+                Link.cast = function (link) {
+                    link.domain = Link.prototype.domain;
+                    return link;
                 };
-                return Post;
+                return Link;
             }());
-            exports_1("Post", Post);
+            exports_1("Link", Link);
         }
     }
 });
-//# sourceMappingURL=post.js.map
+//# sourceMappingURL=link.js.map

@@ -37,6 +37,8 @@ System.register(['angular2/core', 'angular2/router', './topic.service', './post.
                 }
                 PostListComponent.prototype.ngOnInit = function () {
                     this.topicName = decodeURI(this._routeParams.get('topic_name'));
+                    this.searchString = decodeURI(this._routeParams.get('search_string'));
+                    console.log(this.searchString === 'null');
                     this.getPostList();
                     this.getTopic();
                 };
@@ -47,20 +49,22 @@ System.register(['angular2/core', 'angular2/router', './topic.service', './post.
                 };
                 PostListComponent.prototype.getPostList = function () {
                     var _this = this;
-                    console.log('component getpostlist called');
                     this._postService.getPostList(this.topicName)
                         .subscribe(function (postlist) {
                         _this.postlist = postlist;
                         _this.loaded = true;
                     }, function (error) { return _this.errorMessage = error; });
+                    console.log(this.postlist);
                 };
                 PostListComponent.prototype.addPost = function (newLink, newTitle, newTopic) {
                     var _this = this;
-                    if (newLink === void 0) { newLink = "http://google.com"; }
-                    if (newTitle === void 0) { newTitle = "title"; }
                     if (newTopic === void 0) { newTopic = 1; }
-                    this._postService.addPost(newLink, newTitle, newTopic)
-                        .subscribe(function (post) { return _this.postlist.push(post); }, function (error) { return _this.errorMessage = error; });
+                    this._postService.addPost(newLink.value, newTitle.value, newTopic)
+                        .subscribe(function (post) {
+                        _this.postlist.push(post);
+                        newLink.value = "";
+                        newTitle.value = "";
+                    }, function (error) { return _this.errorMessage = error; });
                 };
                 PostListComponent.prototype.upVote = function (post) {
                     var _this = this;
@@ -91,7 +95,10 @@ System.register(['angular2/core', 'angular2/router', './topic.service', './post.
                 PostListComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/templates/post_list.component.html',
-                        styleUrls: ['app/css/post_list.component.css']
+                        styleUrls: ['app/css/post_list.component.css'],
+                        directives: [
+                            router_1.ROUTER_DIRECTIVES
+                        ],
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, post_service_1.PostService, topic_service_1.TopicService])
                 ], PostListComponent);

@@ -1,43 +1,43 @@
 import {Injectable}     from 'angular2/core';
 import {Http, Response, URLSearchParams} from 'angular2/http';
-import {Post}           from './post';
+import {Link}           from './link';
 import {Observable}     from 'rxjs/Observable';
 import {Headers, RequestOptions} from 'angular2/http';
+import {Env} from './environment';
 
 @Injectable()
-export class PostService {
+export class LinkService {
   constructor (private http: Http) {}
 
-  private _baseUrl = 'http://education-project.herokuapp.com/'
-  private _postlistUrl = this._baseUrl + 'topicLinks/';  // URL to web api
-  private _addlinkUrl = this._baseUrl + 'links/';
-  private _updatelinkUrl = this._baseUrl + 'links/';
+  private _topicUrl = Env._baseUrl + 'topicLinks/';  // URL to web api
+  private _addLinkUrl = Env._baseUrl + 'links/';
+  private _updateLinkUrl = Env._baseUrl + 'links/';
 
-  getPostList (topic_name) {
+  getTopic (topic_name) {
   	console.log("services get called")
-    return this.http.get(this._postlistUrl+topic_name+'/')
-                    .map(res => <Post[]> res.json())
+    return this.http.get(this._topicUrl+topic_name+'/')
+                    .map(res => (<Link[]>res.json()).map(Link.cast))
                     .do(data => console.log(data))
                     .catch(this.handleError);
   }
-  addPost(newLink:string, newTitle = "", newTopic=1) : Observable<Post>{
-    var newPost = new Post(newLink, newTitle, newTopic);
-    let body = JSON.stringify(newPost);
+  addLink(newUrl:string, newTitle = "", newTopic=1) : Observable<Link>{
+    var newLink = new Link(newUrl, newTitle, newTopic);
+    let body = JSON.stringify(newLink);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post(this._addlinkUrl, body, options)
-                    .map(res =>  <Post> res.json())
+    return this.http.post(this._addLinkUrl, body, options)
+                    .map(res => Link.cast(<Link>res.json()))
                     .do(data => console.log("add link", data))
                     .catch(this.handleError);
   }
 
-  updateLink(post : Post) : Observable<Post> {
-    let body = JSON.stringify(post);
+  updateLink(link : Link) : Observable<Link> {
+    let body = JSON.stringify(link);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers,
-                                       url: this._updatelinkUrl + post.pk + "/" });
-    return this.http.put(this._updatelinkUrl, body, options)
-                    .map(res => <Post> res.json())
+                                       url: this._updateLinkUrl + link.pk + "/" });
+    return this.http.put(this._updateLinkUrl, body, options)
+                    .map(res => <Link> res.json())
                     .do(data => console.log("update link", data))
                     .catch(this.handleError);
   }

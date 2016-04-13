@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', './post', 'rxjs/Observable', './environment'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', './link', 'rxjs/Observable', './environment'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,8 +10,8 @@ System.register(['angular2/core', 'angular2/http', './post', 'rxjs/Observable', 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, post_1, Observable_1, http_2, environment_1;
-    var PostService;
+    var core_1, http_1, link_1, Observable_1, http_2, environment_1;
+    var LinkService;
     return {
         setters:[
             function (core_1_1) {
@@ -21,8 +21,8 @@ System.register(['angular2/core', 'angular2/http', './post', 'rxjs/Observable', 
                 http_1 = http_1_1;
                 http_2 = http_1_1;
             },
-            function (post_1_1) {
-                post_1 = post_1_1;
+            function (link_1_1) {
+                link_1 = link_1_1;
             },
             function (Observable_1_1) {
                 Observable_1 = Observable_1_1;
@@ -31,56 +31,56 @@ System.register(['angular2/core', 'angular2/http', './post', 'rxjs/Observable', 
                 environment_1 = environment_1_1;
             }],
         execute: function() {
-            PostService = (function () {
-                function PostService(http) {
+            LinkService = (function () {
+                function LinkService(http) {
                     this.http = http;
-                    this._TopicUrl = environment_1.Env._baseUrl + 'topicLinks/'; // URL to web api
-                    this._addlinkUrl = environment_1.Env._baseUrl + 'links/';
-                    this._updatelinkUrl = environment_1.Env._baseUrl + 'links/';
+                    this._topicUrl = environment_1.Env._baseUrl + 'topicLinks/'; // URL to web api
+                    this._addLinkUrl = environment_1.Env._baseUrl + 'links/';
+                    this._updateLinkUrl = environment_1.Env._baseUrl + 'links/';
                 }
-                PostService.prototype.getTopic = function (topic_name) {
+                LinkService.prototype.getTopic = function (topic_name) {
                     console.log("services get called");
-                    return this.http.get(this._TopicUrl + topic_name + '/')
-                        .map(function (res) { return res.json().map(post_1.Post.cast); })
+                    return this.http.get(this._topicUrl + topic_name + '/')
+                        .map(function (res) { return res.json().map(link_1.Link.cast); })
                         .do(function (data) { return console.log(data); })
                         .catch(this.handleError);
                 };
-                PostService.prototype.addPost = function (newLink, newTitle, newTopic) {
+                LinkService.prototype.addLink = function (newUrl, newTitle, newTopic) {
                     if (newTitle === void 0) { newTitle = ""; }
                     if (newTopic === void 0) { newTopic = 1; }
-                    var newPost = new post_1.Post(newLink, newTitle, newTopic);
-                    var body = JSON.stringify(newPost);
+                    var newLink = new link_1.Link(newUrl, newTitle, newTopic);
+                    var body = JSON.stringify(newLink);
                     var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
                     var options = new http_2.RequestOptions({ headers: headers });
-                    return this.http.post(this._addlinkUrl, body, options)
-                        .map(function (res) { return post_1.Post.cast(res.json()); })
+                    return this.http.post(this._addLinkUrl, body, options)
+                        .map(function (res) { return link_1.Link.cast(res.json()); })
                         .do(function (data) { return console.log("add link", data); })
                         .catch(this.handleError);
                 };
-                PostService.prototype.updateLink = function (post) {
-                    var body = JSON.stringify(post);
+                LinkService.prototype.updateLink = function (link) {
+                    var body = JSON.stringify(link);
                     var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
                     var options = new http_2.RequestOptions({ headers: headers,
-                        url: this._updatelinkUrl + post.pk + "/" });
-                    return this.http.put(this._updatelinkUrl, body, options)
+                        url: this._updateLinkUrl + link.pk + "/" });
+                    return this.http.put(this._updateLinkUrl, body, options)
                         .map(function (res) { return res.json(); })
                         .do(function (data) { return console.log("update link", data); })
                         .catch(this.handleError);
                 };
-                PostService.prototype.handleError = function (error) {
+                LinkService.prototype.handleError = function (error) {
                     // in a real world app, we may send the error to some remote logging infrastructure
                     // instead of just logging it to the console
                     console.error(error);
                     return Observable_1.Observable.throw(error.json().error || 'Server error');
                 };
-                PostService = __decorate([
+                LinkService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [http_1.Http])
-                ], PostService);
-                return PostService;
+                ], LinkService);
+                return LinkService;
             }());
-            exports_1("PostService", PostService);
+            exports_1("LinkService", LinkService);
         }
     }
 });
-//# sourceMappingURL=post.service.js.map
+//# sourceMappingURL=link.service.js.map
