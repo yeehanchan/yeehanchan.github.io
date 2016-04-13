@@ -8,6 +8,18 @@
       		Start
       	</button>
   	</div>
+  	<div class="popular-trajectories">
+		<ul class="list-group">
+			<li class="list-group-item title">
+				Popular Items
+			</li>
+			<li class="list-group-item trajectory" *ngFor="#trajectory of trajectories">
+				<a [routerLink]="['Trajectory', { trajectory_id: trajectory.pk }]">
+					{{trajectory.name}}
+				</a>
+			</li>
+		</ul>
+  	</div>
 </div>
 <!--<body class="background">
 	<div class="canvas1">

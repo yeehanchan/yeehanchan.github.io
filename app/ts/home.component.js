@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './trajectory.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1;
+    var core_1, router_1, trajectory_service_1;
     var HomeComponent;
     return {
         setters:[
@@ -19,22 +19,30 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (trajectory_service_1_1) {
+                trajectory_service_1 = trajectory_service_1_1;
             }],
         execute: function() {
             HomeComponent = (function () {
-                function HomeComponent(_router) {
+                function HomeComponent(_router, _trajectoryService) {
                     this._router = _router;
+                    this._trajectoryService = _trajectoryService;
                     this.url = "../../images/background2.png";
                 }
                 HomeComponent.prototype.changeBackground = function () {
                     this.url = this.url === "../../images/background2.png" ? "../../images/background2-2.jpg" : this.url = "../../images/background2.png";
                 };
                 HomeComponent.prototype.ngOnInit = function () {
-                    setInterval(this.changeBackground, 2000);
+                    // setInterval(this.changeBackground, 2000); 
+                    this.getTrajectories();
+                };
+                HomeComponent.prototype.getTrajectories = function () {
+                    var _this = this;
+                    this._trajectoryService.getTrajectories()
+                        .subscribe(function (trajectories) { return _this.trajectories = trajectories; }, function (error) { return _this.errorMessage = error; });
                 };
                 HomeComponent.prototype.start = function (topic) {
-                    console.log("hi");
-                    console.log(topic);
                     this._router.navigate(['/Search', { search_string: topic }]);
                 };
                 HomeComponent = __decorate([
@@ -45,7 +53,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                             router_1.ROUTER_DIRECTIVES
                         ],
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router])
+                    __metadata('design:paramtypes', [router_1.Router, trajectory_service_1.TrajectoryService])
                 ], HomeComponent);
                 return HomeComponent;
             }());
