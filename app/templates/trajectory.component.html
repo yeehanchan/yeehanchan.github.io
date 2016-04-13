@@ -1,0 +1,35 @@
+<div class="trajectory">
+	<div class="content link">
+		<ul class="list-group">
+			<li class="list-group-item title">
+				<h2>{{trajectory.name}}</h2>
+			</li>
+			<li class="list-group-item loading" *ngIf="!loaded">
+				Loading...
+			</li>
+			<li class="list-group-item no-topics" *ngIf="trajectory === undefined && loaded">
+				Trajectory not found.  Try adding it!
+			</li>
+			<li class="list-group-item">
+				<ul class="list-group">
+					<div class="level" *ngFor="#level of trajectory.levels">
+						<li class="list-group-item title">
+							<h3>{{level.name}}</h3>
+						</li>
+						<li class="list-group-item level" *ngFor="#topic of level.topics">
+							<div class="body">
+								<h3 class="topic" (click)="openTopic(topic.name)">{{topic.name}} <span class="link-count">{{topic.link_count}} link<span *ngIf="topic.link_count !== 1">s</span></span></h3>
+							</div>
+						</li>
+					</div>
+				</ul>
+			</li>
+		</ul>
+<!-- 		<div class="form-list add-topic">
+			<input type="text" class="form-control item" #newTopicName
+		  		(keyup.enter)="addTopic(newTopicName.value)"
+		  		placeholder="Name">
+			<button class="item btn btn-primary btn-block buttons" (click)=addTopic(newTopicName.value)>Add Topic</button>	
+		</div> -->
+	</div>
+</div>
