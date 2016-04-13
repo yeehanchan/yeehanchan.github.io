@@ -1,15 +1,18 @@
 <div class="topic-list">
-	<div class="margins link">
+	<div class="content link">
 		<ul class="list-group">
 			<li class="list-group-item title">
-				<h2>Search for: {{searchString}}</h2>
+				<h2>Topics related to <span class="search-string">{{searchString}}</span></h2>
 			</li>
-			<li class="list-group-item no-topics" *ngIf="topicList.length === 0">
+			<li class="list-group-item loading" *ngIf="!loaded">
+				Loading...
+			</li>
+			<li class="list-group-item no-topics" *ngIf="topicList.length === 0 && loaded">
 				Sorry, no topic match your search.  Try adding one!
 			</li>
 			<li class="list-group-item topic" *ngFor="#topic of topicList">
 				<div class="body">
-					<h3 class="link" (click)="openTopic(topic.name)">{{topic.name}}</h3>
+					<h3 class="link" (click)="openTopic(topic.name)">{{topic.name}} <span class="link-count">{{topic.link_count}} link<span *ngIf="topic.link_count !== 1">s</span></span></h3>
 				</div>
 			</li>
 		</ul>
