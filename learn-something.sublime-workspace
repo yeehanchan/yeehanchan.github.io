@@ -1,0 +1,1389 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Link",
+				"LinkedListNode"
+			],
+			[
+				"raw",
+				"raw_data"
+			],
+			[
+				"hash",
+				"hashB"
+			],
+			[
+				"A",
+				"A"
+			],
+			[
+				"heap",
+				"heapSort"
+			],
+			[
+				"b",
+				"b"
+			],
+			[
+				"thr",
+				"threes0"
+			],
+			[
+				"len",
+				"lengths"
+			],
+			[
+				"max",
+				"maximalRectangle"
+			],
+			[
+				"cur",
+				"currentSum"
+			],
+			[
+				"gray",
+				"grayCode"
+			],
+			[
+				"sotr",
+				"sortListN"
+			],
+			[
+				"prin",
+				"printList"
+			],
+			[
+				"pri",
+				"printList"
+			],
+			[
+				"creat",
+				"createClass"
+			],
+			[
+				"filter",
+				"filterByType"
+			],
+			[
+				"sortBy",
+				"sortByOrder"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"Chan",
+				"ChangePasswordPane"
+			],
+			[
+				"cre",
+				"createClass"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"m",
+				"margin-left"
+			],
+			[
+				"Posts",
+				"PostsTab"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"major",
+				"majority"
+			],
+			[
+				"cor",
+				"correct_counts"
+			],
+			[
+				"al",
+				"alexnet3196"
+			],
+			[
+				"mnb-al",
+				"mnb-alexnet"
+			],
+			[
+				"fil",
+				"files"
+			],
+			[
+				"a",
+				"attrs"
+			],
+			[
+				"log-",
+				"logreg-alexnet"
+			],
+			[
+				"pre",
+				"previous_results"
+			],
+			[
+				"labels",
+				"labels_list"
+			],
+			[
+				"la",
+				"labels_list"
+			],
+			[
+				"zip",
+				"zipCode"
+			],
+			[
+				"use",
+				"userInfo"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"app",
+				"appointments"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"to",
+				"toDict"
+			],
+			[
+				"mem",
+				"member"
+			],
+			[
+				"se",
+				"service_type"
+			],
+			[
+				"cu",
+				"customer"
+			],
+			[
+				"sendEm",
+				"send_email"
+			],
+			[
+				"cust",
+				"customerInfo"
+			],
+			[
+				"coop",
+				"coopMember"
+			],
+			[
+				"ad",
+				"addressLine2"
+			],
+			[
+				"last",
+				"lastName"
+			],
+			[
+				"bord",
+				"border"
+			],
+			[
+				"user",
+				"user_info"
+			],
+			[
+				"add",
+				"addressLine1"
+			],
+			[
+				"userI",
+				"userInfo"
+			],
+			[
+				"inl",
+				"inline"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"firs",
+				"firstName"
+			],
+			[
+				"Ues",
+				"UserInformation"
+			],
+			[
+				"User",
+				"UserInformation"
+			],
+			[
+				"coo",
+				"coop_obj"
+			],
+			[
+				"COo",
+				"CoopMember"
+			],
+			[
+				"Coo",
+				"CoopMember"
+			],
+			[
+				"Ht",
+				"HttpResponseBadRequest"
+			],
+			[
+				"t",
+				"top"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"Data",
+				"DATABASES"
+			],
+			[
+				"slop",
+				"begin{sloppypar}	latex-l2tabu"
+			],
+			[
+				"delta",
+				"Delta	latex-mathsymbols"
+			],
+			[
+				"orien",
+				"orientation_stack"
+			],
+			[
+				"coll",
+				"collapsedWhenUnread"
+			],
+			[
+				"collap",
+				"collapsed"
+			],
+			[
+				"clas",
+				"classNames"
+			],
+			[
+				"ajax",
+				"ajaxGetNotifications"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"sche",
+				"scheduled"
+			],
+			[
+				"create",
+				"createAccount"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"tet",
+				"text-align"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"inli",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": ".sublime-project",
+			"settings":
+			{
+				"buffer_size": 212,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Java/Ant.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JavaC.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Java/JavaC.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Clean up Files"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 92.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"conver",
+				"Indentation: Convert to Spaces"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/harrison/Documents/yeehanchan.github.io",
+		"/home/harrison/Documents/yeehanchan.github.io/app"
+	],
+	"file_history":
+	[
+		"/home/harrison/Dropbox/Classes/Specialization/brainstorm.txt",
+		"/home/harrison/Dropbox/events.txt",
+		"/home/harrison/LoopSumTest.java",
+		"/home/harrison/Dropbox/Classes/Data Science/Assignment 1/dac_sample.txt",
+		"/home/harrison/Dropbox/Documents/Internship Applications/statuses.txt",
+		"/home/harrison/Dropbox/Classes/Data Science/notes_03_07_2016.txt",
+		"/home/harrison/test.py",
+		"/home/harrison/Dropbox/Classes/Specialization/FrontEnd/index.html",
+		"/home/harrison/test2.py",
+		"/home/harrison/test.rb",
+		"/home/harrison/Dropbox/Classes/Data Science/notes_02_29_2016.txt",
+		"/home/harrison/Dropbox/Classes/IntroCM/github_token.txt",
+		"/home/harrison/Dropbox/Classes/classes.txt",
+		"/home/harrison/Dropbox/Classes/IntroCM/facebook_api.py",
+		"/home/harrison/Dropbox/Classes/IntroCM/github_api.py",
+		"/home/harrison/Dropbox/Classes/IntroCM/instagram_api.py",
+		"/home/harrison/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/harrison/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/harrison/Dropbox/thoughts/ADD-learning.txt",
+		"/home/harrison/Dropbox/journal.txt",
+		"/home/harrison/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/harrison/Downloads/How-people-learn.pdf",
+		"/home/harrison/Dropbox/Documents/Internship Applications/oscar questions.txt",
+		"/home/harrison/Dropbox/Documents/Interviews/binarysearch.txt",
+		"/home/harrison/Downloads/download_firmware.sh",
+		"/home/harrison/Downloads/bcwc_pcie/firmware/Makefile",
+		"/home/harrison/Dropbox/SRC Coders/Arch installation/Macbook Air.txt",
+		"/home/harrison/Dropbox/mandarin/pinyin2.txt",
+		"/home/harrison/Dropbox/mandarin/pinyin.txt",
+		"/home/harrison/Dropbox/SRC Coders/Arch installation/Harrison/facetimehd.txt",
+		"/home/harrison/Downloads/linux/run.sh",
+		"/home/harrison/Downloads/linux/README",
+		"/home/harrison/Dropbox/Documents/allen-ai-challenge/training_set.tsv",
+		"/home/harrison/Documents/WellnessConcepts/DEV/webapp/admin_build/bundle.js",
+		"/home/harrison/Documents/WellnessConcepts/DEV/webapp/api.html",
+		"/home/harrison/Documents/WellnessConcepts/DEV/strive/models/user.js",
+		"/home/harrison/Documents/Wellness Concepts/DEV/webapp/admin_src/main.js",
+		"/home/harrison/Documents/Wellness Concepts/todo.txt",
+		"/home/harrison/Documents/Wellness Concepts/DEV/webapp/admin_src/post_components.js",
+		"/home/harrison/Documents/Wellness Concepts/hours.txt",
+		"/home/harrison/Documents/Wellness Concepts/DEV/webapp/admin_src/user_components.js",
+		"/home/harrison/Documents/Wellness Concepts/DEV/webapp/admin_src/components.js",
+		"/home/harrison/Documents/Wellness Concepts/DEV/webapp/css/admin.css",
+		"/home/harrison/Documents/Wellness Concepts/DEV/webapp/admin.html",
+		"/home/harrison/Documents/Wellness Concepts/DEV/webapp/scripts/react-bootstrap-datetimepicker.js",
+		"/home/harrison/Documents/Wellness Concepts/DEV/webapp/scripts/react-bootstrap-datetimepicker.min.js",
+		"/home/harrison/Documents/Wellness Concepts/DEV/strive/models/user.js",
+		"/home/harrison/Documents/Wellness Concepts/DEV/strive/models/post.js",
+		"/home/harrison/Documents/Wellness Concepts/timer.py",
+		"/home/harrison/Documents/Wellness Concepts/DEV/webapp/scripts/lodash.min.js",
+		"/home/harrison/Documents/hours.txt",
+		"/home/harrison/Dropbox/Wellness Concepts local/hours.txt",
+		"/home/harrison/Dropbox/Classes/Modern Analytics/final/EasyClassifier.py",
+		"/home/harrison/Dropbox/Classes/Modern Analytics/final/combined_results.csv",
+		"/home/harrison/Downloads/psharedaccyclosing--monitoring1.accountsaccounts-201415procurement-card-transaction20150331purchasin",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify2/coopify/webapp/static/css/ionic.app.css",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify2/coopify/env/lib/python3.5/site-packages/django/views/generic/detail.py",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify2/coopify/webapp/static/templates/book.html",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify2/coopify/stack.txt",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify2/coopify/webapp/static/lib/angular-ui-router/src/viewScroll.js",
+		"/home/harrison/Dropbox/Documents/Internship Applications/lyft.py",
+		"/home/harrison/Documents/HarrisonGregg.github.io/projects.html",
+		"/home/harrison/Documents/HarrisonGregg.github.io/style.css",
+		"/home/harrison/Dropbox/Classes/PhysicalComputing/lab4/concurrency/Blink/Blink.ino",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify2/coopify/webapp/static/templates/details.html",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify2/coopify/backend/send_sms.py",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify2/coopify/webapp/static/lib/ionic/css/ionic.css",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify2/coopify/webapp/templates/webapp/index.html",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify2/coopify/coopify/urls.py",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify2/coopify/webapp/views.py",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify2/coopify/coopify/settings.py",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify2/coopify/coopify/wsgi.py",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify2/coopify/runtime.txt",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify/coopify-webapp/www/css/style.css",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify/coopify/env/lib/python3.5/site-packages/django/contrib/admin/static/admin/js/admin/DateTimeShortcuts.js",
+		"/home/harrison/Downloads/mfglabs-iconset/mfglabs-iconset-master/css/mfglabs_iconset.css",
+		"/home/harrison/Downloads/mfglabs-iconset/mfglabs-iconset-master/css/main.css",
+		"/home/harrison/Downloads/mfglabs-iconset/mfglabs-iconset-master/index.html",
+		"/home/harrison/Downloads/mba6x_bl/README.md",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify/coopify-webapp/www/css/ionic.app.css",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify/coopify-webapp/www/templates/youreAllSet.html",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify/coopify/frontend/models.py",
+		"/home/harrison/Dropbox/Classes/CompanyProject/Coopify/coopify-webapp/www/index.html",
+		"/home/harrison/Dropbox/Classes/Modern Analytics/lecture11/scribenotes.tex",
+		"/home/harrison/Dropbox/Classes/StartupSystems/cs5356/README.md",
+		"/home/harrison/Dropbox/Classes/StartupSystems/BlockchainGambling/blockchain_gambler/tests.py",
+		"/home/harrison/Dropbox/Classes/StartupSystems/BlockchainGambling/blockchain_gambler/models.py",
+		"/home/harrison/Dropbox/Classes/StartupSystems/BlockchainGambling/frontend/account_list.txt",
+		"/home/harrison/Dropbox/SRC Coders/Arch installation/fixes/immediate wake after suspend.txt",
+		"/home/harrison/Dropbox/Classes/Security and Privacy/homework2/homework2.tex",
+		"/home/harrison/Dropbox/Classes/Security and Privacy/homework2/homework1.tex",
+		"/home/harrison/Dropbox/Classes/Modern Analytics/assignment 2/faces/test.txt",
+		"/home/harrison/Arduino/sketch_sep23a/sketch_sep23a.ino",
+		"/home/harrison/Dropbox/Classes/Security and Privacy/homework1.py",
+		"/home/harrison/Dropbox/Classes/Security and Privacy/pin_hashes.txt",
+		"/home/harrison/Downloads/RNB PINs.xlsx",
+		"/home/harrison/Dropbox/Classes/homework.txt",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/css/signup.css",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/scripts/signup.jsx",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/css/alerts.css",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/css/style.css",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/css/content.css",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/scripts/pages.jsx",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/scripts/script.jsx",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/state3.html",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/state2.html",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/index.html",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/signup.html",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/scripts/components.jsx",
+		"/home/harrison/Dropbox/Wellness Concepts local/fonts/wellness-concepts.svg",
+		"/tmp/fz3temp-1/signup.css",
+		"/tmp/fz3temp-1/signup.jsx",
+		"/home/harrison/Documents/dotfiles/.config/awesome/apw/pulseaudio.lua",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/css/jim-icons.css",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/css/icons-reference.html",
+		"/home/harrison/Dropbox/Wellness Concepts/icon font/WC icon font/styles.css",
+		"/home/harrison/Downloads/WC font/icons-reference.html",
+		"/home/harrison/Dropbox/Classes/Modern Analytics/iris.names",
+		"/home/harrison/Dropbox/Documents/Internship Applications/resume.tex",
+		"/home/harrison/Dropbox/classes.txt",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/css/login.css",
+		"/home/harrison/Dropbox/Wellness Concepts/webapp/res/calendar.svg",
+		"/home/harrison/Dropbox/Wellness Concepts local/webapp/res/head.svg",
+		"/home/harrison/Dropbox/4.txt"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/home/harrison/Documents/Wellness Concepts/DEV"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"localhost",
+			"sh",
+			"bin",
+			"next",
+			"4:00pm",
+			"11:15am ",
+			"11:15am",
+			"science",
+			"3",
+			"heappop",
+			"Linked",
+			" PM",
+			" AM",
+			"March ",
+			"first_0_1",
+			"INSTAGRAM_TOKEN",
+			"568eb30187df4f4eb765b4ce8173b32f",
+			"GITHUB_TOKEN",
+			"targetHash",
+			"hashRight",
+			"hashLeft",
+			"A",
+			"swap",
+			", ",
+			"a[",
+			"a",
+			"end",
+			"\",\"",
+			", ",
+			"vintage",
+			", ",
+			" ",
+			"\", \"",
+			"SWE Intern",
+			"\", \"",
+			" ",
+			"no",
+			" ",
+			"False, DP",
+			"True, DP",
+			")*self.cnttrue",
+			", True)",
+			"G ",
+			" ",
+			"G ",
+			" ",
+			"G ",
+			"S ",
+			"returns ",
+			"get(",
+			"set(",
+			"] [",
+			"[",
+			" ",
+			",",
+			", ",
+			"1325764",
+			"489",
+			"<TOKEN YOU JUST GOT>",
+			"<YOUR CLIENT ID>",
+			", ",
+			".append(",
+			"540",
+			",",
+			"247d240d303d9d304d105d44d204d291d26d242d2d358d264d176d289d196d329d189d102d45d111d115d339d74d200d34d201d215d173d107d141d71d125d6d241d275d88d91d58d171d346d219d238d246d10d118d163d287d179d123d348d283d313d226d324d203d323d28d251d69d311d330d316d320d312d50d157d342d12d253d180d112d90d16d288d213d273d57d243d42d168d55d144d131d38d317d194d355",
+			", ",
+			"68",
+			",",
+			" ",
+			", ",
+			"241d261",
+			", ",
+			"339d37",
+			", ",
+			"\", \"",
+			", ",
+			"=",
+			", ",
+			",",
+			", ",
+			"\",\"",
+			"dict",
+			" ",
+			",",
+			"+4",
+			"barfoothefoobarman",
+			"sums",
+			"barfoothefoobarman",
+			",",
+			"Solution",
+			"a",
+			"insertionSortList",
+			"a.",
+			"start",
+			"3",
+			"$BASE/",
+			"print",
+			"Admin",
+			"lastLogin",
+			"post",
+			"releaseDate",
+			"moment",
+			"editor",
+			"pre",
+			".\\$",
+			"287",
+			"posts",
+			"event",
+			"title",
+			"onTitleChange",
+			"ans",
+			"input",
+			"select",
+			"filter",
+			"_\\.",
+			"checkbox",
+			"search",
+			"toISOString",
+			"toLocaleString",
+			"DateTimeField",
+			"<table",
+			"StriveAdmin",
+			"classnames",
+			"classNames",
+			"installedModules",
+			"__webpack_require__",
+			"_interopRequireDefault",
+			"_moment2 = "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"",
+			" ",
+			"",
+			"\\n",
+			"createEmail",
+			"\\1"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": ".sublime-project",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 212,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 335.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "learn-something.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"classes",
+				"~/Dropbox/Classes/classes.txt"
+			],
+			[
+				"clas",
+				"~/Dropbox/Classes/classes.txt"
+			],
+			[
+				"class",
+				"~/Dropbox/Classes/classes.txt"
+			],
+			[
+				"test",
+				"~/test.py"
+			],
+			[
+				"css",
+				"DEV/webapp/css/admin.css"
+			],
+			[
+				"admin",
+				"DEV/webapp/admin.html"
+			],
+			[
+				"hours",
+				"hours.txt"
+			],
+			[
+				"post_",
+				"DEV/webapp/admin_src/post_components.js"
+			],
+			[
+				"bundl",
+				"DEV/webapp/admin_build/bundle.js"
+			],
+			[
+				"bundle",
+				"DEV/webapp/admin_build/bundle.js"
+			],
+			[
+				"admin.css",
+				"DEV/webapp/css/admin.css"
+			],
+			[
+				"post_com",
+				"DEV/webapp/admin_src/post_components.js"
+			],
+			[
+				"api",
+				"DEV/webapp/api.html"
+			],
+			[
+				"api.h",
+				"DEV/webapp/api.html"
+			],
+			[
+				"user",
+				"DEV/webapp/admin_src/user_components.js"
+			],
+			[
+				"admin.cs",
+				"DEV/webapp/css/admin.css"
+			],
+			[
+				"user_",
+				"DEV/webapp/admin_src/user_components.js"
+			],
+			[
+				"user_c",
+				"DEV/webapp/admin_src/user_components.js"
+			],
+			[
+				"usercom",
+				"DEV/webapp/admin_src/user_components.js"
+			],
+			[
+				"uesr",
+				"DEV/strive/models/user.js"
+			],
+			[
+				"todo",
+				"todo.txt"
+			],
+			[
+				"admin.ht",
+				"DEV/webapp/admin.html"
+			],
+			[
+				"posts",
+				"DEV/strive/models/post.js"
+			],
+			[
+				"timer.",
+				"timer.py"
+			],
+			[
+				"fnn",
+				"FNN.py"
+			],
+			[
+				"final4",
+				"final4.py"
+			],
+			[
+				".csv",
+				"results.csv"
+			],
+			[
+				"final3",
+				"final3.py"
+			],
+			[
+				"final",
+				"final3.py"
+			],
+			[
+				"co",
+				"compare.py"
+			],
+			[
+				"comp",
+				"compare.py"
+			],
+			[
+				"ec",
+				"EasyClassifier.py"
+			],
+			[
+				"models",
+				"coopify/backend/models.py"
+			],
+			[
+				"views",
+				"coopify/backend/views.py"
+			],
+			[
+				"serv",
+				"coopify/webapp/static/js/services.js"
+			],
+			[
+				"allset",
+				"coopify/webapp/static/templates/youreAllSet.html"
+			],
+			[
+				"contro",
+				"coopify/webapp/static/js/controllers.js"
+			],
+			[
+				"send_e",
+				"coopify/backend/send_email.py"
+			],
+			[
+				"coopmember",
+				"coopify/webapp/static/templates/member.html"
+			],
+			[
+				"send",
+				"coopify/backend/send_sms.py"
+			],
+			[
+				"coop",
+				"coopify/webapp/static/templates/coop.html"
+			],
+			[
+				"coops",
+				"coopify/webapp/static/templates/coops.html"
+			],
+			[
+				"appo",
+				"coopify/webapp/static/templates/appointments.html"
+			],
+			[
+				"mode",
+				"coopify/backend/models.py"
+			],
+			[
+				"url",
+				"coopify/coopify/urls.py"
+			],
+			[
+				"ioni",
+				"coopify/webapp/static/lib/ionic/css/ionic.css"
+			],
+			[
+				"ionic.",
+				"coopify/webapp/static/css/ionic.app.css"
+			],
+			[
+				"view",
+				"coopify/backend/views.py"
+			],
+			[
+				"contr",
+				"coopify/webapp/static/js/controllers.js"
+			],
+			[
+				"ionic",
+				"coopify/webapp/static/lib/ionic/css/ionic.css"
+			],
+			[
+				"servi",
+				"coopify/webapp/static/js/services.js"
+			],
+			[
+				"detai",
+				"coopify/env/lib/python3.5/site-packages/django/views/generic/detail.py"
+			],
+			[
+				"ionic.cs",
+				"coopify/webapp/static/lib/ionic/css/ionic.css"
+			],
+			[
+				"mfg",
+				"coopify/webapp/static/css/mfglabs_iconset.css"
+			],
+			[
+				".css",
+				"coopify/webapp/static/lib/ionic/css/ionic.css"
+			],
+			[
+				"index",
+				"coopify/webapp/templates/webapp/index.html"
+			],
+			[
+				"appoint",
+				"coopify/webapp/static/templates/appointments.html"
+			],
+			[
+				"appoin",
+				"coopify/webapp/static/templates/appointments.html"
+			],
+			[
+				"routes",
+				"coopify/webapp/static/js/routes.js"
+			],
+			[
+				"urls",
+				"coopify/coopify/urls.py"
+			],
+			[
+				"modes",
+				"coopify/backend/models.py"
+			],
+			[
+				"control",
+				"coopify/webapp/static/js/controllers.js"
+			],
+			[
+				"model",
+				"coopify/backend/models.py"
+			],
+			[
+				"stack",
+				"coopify/stack.txt"
+			],
+			[
+				"mod",
+				"coopify/backend/models.py"
+			],
+			[
+				"service",
+				"coopify/webapp/static/js/services.js"
+			],
+			[
+				"confir",
+				"coopify/webapp/static/templates/confirmation.html"
+			],
+			[
+				"book.",
+				"coopify/webapp/static/templates/book.html"
+			],
+			[
+				"membe",
+				"coopify/webapp/static/templates/member.html"
+			],
+			[
+				"confirm",
+				"coopify/webapp/static/templates/confirmation.html"
+			],
+			[
+				"ionic.css",
+				"coopify/webapp/static/lib/ionic/css/ionic.css"
+			],
+			[
+				"create",
+				"coopify/webapp/static/templates/createAccount.html"
+			],
+			[
+				"form",
+				"coopify/webapp/templates/webapp/form.html"
+			],
+			[
+				"conf",
+				"coopify/webapp/static/templates/confirmation.html"
+			],
+			[
+				"route",
+				"coopify/webapp/static/js/routes.js"
+			],
+			[
+				"veiws",
+				"coopify/webapp/static/lib/angular-ui-router/src/viewScroll.js"
+			],
+			[
+				"routse",
+				"coopify/webapp/static/js/routes.js"
+			],
+			[
+				"ulrs",
+				"coopify/coopify/urls.py"
+			],
+			[
+				"confi",
+				"coopify/webapp/static/templates/confirmation.html"
+			],
+			[
+				"confrim",
+				"coopify/webapp/static/templates/confirmation.html"
+			],
+			[
+				"craete",
+				"coopify/webapp/static/templates/createAccount.html"
+			],
+			[
+				"controll",
+				"coopify/webapp/static/js/controllers.js"
+			],
+			[
+				"settin",
+				"coopify/coopify/settings.py"
+			],
+			[
+				"confri",
+				"coopify/webapp/static/templates/confirmation.html"
+			],
+			[
+				"payme",
+				"coopify/webapp/static/templates/payment.html"
+			],
+			[
+				"servic",
+				"coopify/webapp/static/js/services.js"
+			],
+			[
+				"cont",
+				"coopify/webapp/static/js/controllers.js"
+			],
+			[
+				"pay",
+				"coopify/webapp/static/templates/payment.html"
+			],
+			[
+				"ser",
+				"coopify/webapp/static/js/services.js"
+			],
+			[
+				"book",
+				"coopify/webapp/static/templates/book.html"
+			],
+			[
+				"payment",
+				"coopify/webapp/static/templates/payment.html"
+			],
+			[
+				"app",
+				"coopify/webapp/static/js/app.js"
+			],
+			[
+				"inde",
+				"coopify/webapp/templates/webapp/index.html"
+			],
+			[
+				"routs",
+				"coopify/webapp/static/js/routes.js"
+			],
+			[
+				"in",
+				"coopify/webapp/templates/webapp/index.html"
+			],
+			[
+				"mem",
+				"coopify/webapp/static/templates/member.html"
+			],
+			[
+				"u",
+				"coopify/coopify/urls.py"
+			],
+			[
+				"member",
+				"coopify/webapp/static/templates/member.html"
+			],
+			[
+				"details",
+				"coopify/webapp/static/templates/details.html"
+			],
+			[
+				"coo",
+				"coopify/webapp/static/templates/coop.html"
+			],
+			[
+				"get",
+				"coopify/webapp/static/templates/getStarted.html"
+			],
+			[
+				"sett",
+				"coopify/coopify/settings.py"
+			],
+			[
+				"you",
+				"coopify-webapp/www/templates/youreAllSet.html"
+			],
+			[
+				"deti",
+				"coopify/env/lib/python3.5/site-packages/django/contrib/admin/static/admin/js/admin/DateTimeShortcuts.js"
+			],
+			[
+				"deta",
+				"coopify-webapp/www/templates/details.html"
+			],
+			[
+				"your",
+				"coopify-webapp/www/templates/youreAllSet.html"
+			],
+			[
+				"gulp",
+				"coopify-webapp/gulpfile.js"
+			],
+			[
+				"home",
+				"~/Dropbox/Classes/homework.txt"
+			],
+			[
+				"settings",
+				"blockchain/settings.py"
+			],
+			[
+				"homew",
+				"~/Dropbox/Classes/homework.txt"
+			],
+			[
+				".travis",
+				".travis.yml"
+			],
+			[
+				"setti",
+				"blockchain/settings.py"
+			],
+			[
+				"gitig",
+				".gitignore"
+			],
+			[
+				"wsgi",
+				"blockchain/wsgi.py"
+			],
+			[
+				"signin",
+				"frontend/templates/frontend/signin.html"
+			],
+			[
+				"",
+				"~/Dropbox/classes.txt"
+			],
+			[
+				"tex",
+				"~/Dropbox/Classes/Modern Analytics/quiz2notes.txt"
+			],
+			[
+				"pages",
+				"scripts/pages.jsx"
+			],
+			[
+				"alert",
+				"css/alerts.css"
+			],
+			[
+				"scr",
+				"scripts/script.jsx"
+			],
+			[
+				"page",
+				"scripts/pages.jsx"
+			],
+			[
+				"hor",
+				"~/Dropbox/Wellness Concepts local/hours.txt"
+			],
+			[
+				"alerts",
+				"~/Dropbox/Wellness Concepts local/webapp/css/alerts.css"
+			],
+			[
+				"style",
+				"css/style.css"
+			],
+			[
+				"compo",
+				"scripts/components.jsx"
+			],
+			[
+				"content",
+				"css/content.css"
+			],
+			[
+				"hour",
+				"~/Dropbox/Wellness Concepts local/hours.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 210.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
