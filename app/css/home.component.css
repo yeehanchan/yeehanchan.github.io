@@ -12,6 +12,18 @@
 	color: #fdf9f3;
 }
 
+/* Popular Trajectories */
+.popular-trajectories {
+    width: 100%;
+    padding: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.popular-trajectories .list-group-item {
+	padding: 8px;
+	text-align: left;
+}
+
 /*.navbar {
 	padding: 20px;
 }
@@ -72,6 +84,7 @@
     max-width: 500px;
     margin: 0 auto;
 }
+
 .btn-search {
     background-color: #333;
     width: 100%;
