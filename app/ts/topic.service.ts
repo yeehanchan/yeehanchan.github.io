@@ -3,15 +3,15 @@ import {Http, Response, URLSearchParams} from 'angular2/http';
 import {Topic}           from './topic';
 import {Observable}     from 'rxjs/Observable';
 import {Headers, RequestOptions} from 'angular2/http';
+import {Env} from './environment';
 
 @Injectable()
 export class TopicService {
   constructor (private http: Http) {}
 
-  private _baseUrl = 'http://education-project.herokuapp.com/'
-  private _searchTopicUrl = this._baseUrl + 'search/';
-  private _addTopicUrl = this._baseUrl + 'topics/';
-  private _getTopicUrl = this._baseUrl + 'getTopic/';
+  private _searchTopicUrl = Env._baseUrl + 'search/';
+  private _addTopicUrl = Env._baseUrl + 'topics/';
+  private _getTopicUrl = Env._baseUrl + 'getTopic/';
 
   getTopicList (search_string) {
   	console.log("services get called")

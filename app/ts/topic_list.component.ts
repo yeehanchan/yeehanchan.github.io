@@ -10,6 +10,7 @@ import {TopicService} from './topic.service';
 export class TopicListComponent implements OnInit{
 	public topicList : Topic[];
 	public searchString: string;
+	public loaded: boolean;
 
 	constructor(
 		private _router: Router,
@@ -27,10 +28,13 @@ export class TopicListComponent implements OnInit{
   	}
 
   	getTopicList() {
-  		console.log('component getpostlist called');
+  		console.log('component getTopic called');
 			this._topicService.getTopicList(this.searchString)
 				.subscribe(
-					postlist => this.topicList = postlist,
+					Topic => {
+						this.topicList = Topic;
+						this.loaded = true;
+					},
                   	error => this.errorMessage = <any>error
                 );
   	}
@@ -46,6 +50,6 @@ export class TopicListComponent implements OnInit{
 	}
 
 	openTopic(topicName) {
-		this._router.navigate(['/Topic', { topic_name: topicName }]);
+		this._router.navigate(['/TopicWithSearch', { topic_name: topicName, search_string: this.searchString }]);
 	}
 }

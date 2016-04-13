@@ -37,9 +37,12 @@ System.register(['angular2/core', 'angular2/router', './topic.service'], functio
                 };
                 TopicListComponent.prototype.getTopicList = function () {
                     var _this = this;
-                    console.log('component getpostlist called');
+                    console.log('component getTopic called');
                     this._topicService.getTopicList(this.searchString)
-                        .subscribe(function (postlist) { return _this.topicList = postlist; }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (Topic) {
+                        _this.topicList = Topic;
+                        _this.loaded = true;
+                    }, function (error) { return _this.errorMessage = error; });
                 };
                 TopicListComponent.prototype.addTopic = function (newTopicName) {
                     var _this = this;
@@ -51,7 +54,7 @@ System.register(['angular2/core', 'angular2/router', './topic.service'], functio
                     }, function (error) { return _this.errorMessage = error; });
                 };
                 TopicListComponent.prototype.openTopic = function (topicName) {
-                    this._router.navigate(['/Topic', { topic_name: topicName }]);
+                    this._router.navigate(['/TopicWithSearch', { topic_name: topicName, search_string: this.searchString }]);
                 };
                 TopicListComponent = __decorate([
                     core_1.Component({
