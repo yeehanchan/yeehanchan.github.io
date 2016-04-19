@@ -34,12 +34,12 @@
 		<div class="form-list add-link list-group">
 			<div class="list-group-item title"><h3>Add another useful resource:</h3></div>
 			<input type="text" class="form-control item" #newTitle
-		  		(keyup.enter)="addlink(newURL,newTitle,topic.pk)"
+		  		(keyup.enter)="addLink(newURL,newTitle,topic.pk)"
 		  		placeholder="A descriptive title">
 			<input type="text" class="form-control item" #newURL
-		  		(keyup.enter)="addlink(newURL,newTitle,topic.pk)"
+		  		(keyup.enter)="addLink(newURL,newTitle,topic.pk)"
 		  		placeholder="URL">
-			<button class="item btn btn-primary btn-block buttons" (click)=addlink(newURL,newTitle,topic.pk)>Add</button>	
+			<button class="item btn btn-primary btn-block buttons" (click)=addLink(newURL,newTitle,topic.pk)>Add</button>	
 		</div>
 	</div>
 	<!-- <iframe *ngIf="currentLink" [src]="currentLink.url"></iframe> -->
