@@ -70,7 +70,7 @@ export class TopicComponent implements OnInit{
 		this._linkService.addLink(newLink.value, newTitle.value, newTopic)
 						 .subscribe(
                      		link => {
-									this.Links.push(link);
+									this.links.push(link);
 									newLink.value = "";
 									newTitle.value = "";
 								},

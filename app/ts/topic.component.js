@@ -67,7 +67,7 @@ System.register(['angular2/core', 'angular2/router', './topic.service', './link.
                     if (newTopic === void 0) { newTopic = 1; }
                     this._linkService.addLink(newLink.value, newTitle.value, newTopic)
                         .subscribe(function (link) {
-                        _this.Links.push(link);
+                        _this.links.push(link);
                         newLink.value = "";
                         newTitle.value = "";
                     }, function (error) { return _this.errorMessage = error; });

@@ -11,16 +11,18 @@
 
 /* Navbar */
 .navbar {
-	padding: 10px;
+	padding: 6px;
 	margin: 0;
+	background-color: #A8E0D5;
 }
 
 .navbar .brand a {
-	color: white;
+	color: #f77a76;
+    background-color: #A8E0D5;
 	text-decoration: none;
 }
 .navbar .brand a:hover {
-	color: white;
+	color: #FF8E88;
 	text-decoration: none;
 }
 
@@ -29,18 +31,23 @@
 	font-size: 24px;
 	display: inline;
 	float: left;
-	padding: 6px 20px;
+	padding:2px 16px;
 	margin: 0;
 }
 .navbar .signup, .navbar .login {
 	display: inline;
 	float:right;
-	padding: 10px 20px;
+	padding: 6px 16px;
 	width: 100px;
 	text-align: center;
 }
 .navbar .login {
-	border: 2px solid white;
+	color: #f77a76;
+	border: 2px solid #f77a76;
+}
+.navbar .login:hover {
+	color: #A8E0D5;
+	background-color: #f77a76;
 }
 @media screen and (max-width: 350px) {
 	.navbar .login {
