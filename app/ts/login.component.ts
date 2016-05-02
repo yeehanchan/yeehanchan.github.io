@@ -10,7 +10,6 @@ import {LoginService}        from './login.service';
     ],
 })
 export class LoginComponent implements OnInit{
-    public loggedIn: Boolean;
 
     constructor(
         private _router: Router,
@@ -22,12 +21,20 @@ export class LoginComponent implements OnInit{
     ngOnInit() { 
     }
 
+
+    signin(username, password) {
+        console.log(username, password);
+        this._loginService.signin(username, password).subscribe((res) => { 
+            console.log(res)
+        });
+            
+    }
+
     signup(email, username, password) {
         console.log(email, username, password);
         console.log(this._loginService.signup(email, username, password,
                     response => {
                         console.log(response);
-                        this.loggedIn = true;
                         this._router.navigate(['/Home', {}]);
                     },
                     error => this.errorMessage = error));
@@ -35,4 +42,6 @@ export class LoginComponent implements OnInit{
             // response => this.loggedIn = true,
             // response => this.errorMessage = response)
     }
+
+
 }
