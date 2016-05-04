@@ -85,6 +85,19 @@ System.register(['angular2/core', 'angular2/router', './topic.service', './link.
                             .subscribe(function (updatedLink) { return link = updatedLink; }, function (error) { return _this.errorMessage = error; });
                     }
                 };
+                TopicComponent.prototype.remove = function (linkIndex) {
+                    // this.downVote(this.links[linkIndex]);
+                    this.links.splice(linkIndex);
+                };
+                TopicComponent.prototype.pin = function (linkIndex) {
+                    var link = this.links[linkIndex];
+                    link.pinned = !link.pinned;
+                    // this.upVote(link);
+                    if (linkIndex > 0 && link.pinned) {
+                        this.links.splice(linkIndex);
+                        this.links.splice(0, 0, link);
+                    }
+                };
                 TopicComponent.prototype.downVote = function (link) {
                     var _this = this;
                     if (link.vote === 1) {

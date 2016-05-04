@@ -92,6 +92,21 @@ export class TopicComponent implements OnInit{
 		}
 	}
 
+	remove(linkIndex: number){
+		// this.downVote(this.links[linkIndex]);
+		this.links.splice(linkIndex);
+	}
+
+	pin(linkIndex: number){
+		var link: Link = this.links[linkIndex];
+		link.pinned = !link.pinned;
+		// this.upVote(link);
+		if (linkIndex > 0 && link.pinned){
+			this.links.splice(linkIndex);
+			this.links.splice(0, 0, link);
+		}
+	}
+
 	downVote(link: Link){
 		if(link.vote === 1){
 			link.score--;

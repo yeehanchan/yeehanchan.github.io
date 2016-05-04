@@ -1,6 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 import {Router, ROUTER_DIRECTIVES} from 'angular2/router'
 import {LoginService}        from './login.service';
+import {StateService}        from './state.service';
 
 @Component({
     templateUrl: 'app/templates/login.component.html',
@@ -10,12 +11,12 @@ import {LoginService}        from './login.service';
     ],
 })
 export class LoginComponent implements OnInit{
-    public loggedIn: Boolean;
 
     constructor(
         private _router: Router,
-        private _loginService: LoginService
-        ) { }
+        private _loginService: LoginService,
+        public state: StateService
+    ) {}
 
     errorMessage: string;
 
@@ -27,12 +28,21 @@ export class LoginComponent implements OnInit{
         console.log(this._loginService.signup(email, username, password,
                     response => {
                         console.log(response);
-                        this.loggedIn = true;
+                        this.state.loggedIn = true;
+                        this.state.username = username;
                         this._router.navigate(['/Home', {}]);
                     },
                     error => this.errorMessage = error));
+    }
 
-            // response => this.loggedIn = true,
-            // response => this.errorMessage = response)
+    signin(username, password) {
+        console.log(this._loginService.signin(username, password,
+            response => {
+                console.log(response);
+                this.state.loggedIn = true;
+                this.state.username = username;
+                this._router.navigate(['/Home', {}]);
+            },
+            error => this.errorMessage = error));
     }
 }

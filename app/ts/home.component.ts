@@ -2,6 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {Router, ROUTER_DIRECTIVES} from 'angular2/router'
 import {Trajectory} from './trajectory';
 import {TrajectoryService} from './trajectory.service';
+import {StateService}        from './state.service';
 
 @Component({
     templateUrl: 'app/templates/home.component.html',
@@ -16,8 +17,9 @@ export class HomeComponent implements OnInit{
 
     constructor(
         private _router: Router,
-        private _trajectoryService: TrajectoryService
-        ) { }
+        private _trajectoryService: TrajectoryService,
+        public state: StateService
+        ) {}
 
     errorMessage: string;
 

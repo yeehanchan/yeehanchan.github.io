@@ -5,6 +5,7 @@ export class Link {
 	public score: number;
 	public pk: number;
 	public vote: number;
+	public pinned: boolean;
 
 	constructor(newLink: string, newTitle: string, newTopic: number){
 		if(newLink.indexOf("//")===-1){

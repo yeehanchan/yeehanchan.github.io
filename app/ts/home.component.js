@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './trajectory.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './trajectory.service', './state.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './trajectory.service'], fu
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, trajectory_service_1;
+    var core_1, router_1, trajectory_service_1, state_service_1;
     var HomeComponent;
     return {
         setters:[
@@ -22,12 +22,16 @@ System.register(['angular2/core', 'angular2/router', './trajectory.service'], fu
             },
             function (trajectory_service_1_1) {
                 trajectory_service_1 = trajectory_service_1_1;
+            },
+            function (state_service_1_1) {
+                state_service_1 = state_service_1_1;
             }],
         execute: function() {
             HomeComponent = (function () {
-                function HomeComponent(_router, _trajectoryService) {
+                function HomeComponent(_router, _trajectoryService, state) {
                     this._router = _router;
                     this._trajectoryService = _trajectoryService;
+                    this.state = state;
                     this.url = "../../images/background2.png";
                 }
                 HomeComponent.prototype.changeBackground = function () {
@@ -53,7 +57,7 @@ System.register(['angular2/core', 'angular2/router', './trajectory.service'], fu
                             router_1.ROUTER_DIRECTIVES
                         ],
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, trajectory_service_1.TrajectoryService])
+                    __metadata('design:paramtypes', [router_1.Router, trajectory_service_1.TrajectoryService, state_service_1.StateService])
                 ], HomeComponent);
                 return HomeComponent;
             }());

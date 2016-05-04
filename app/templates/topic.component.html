@@ -12,17 +12,18 @@
 			<li class="list-group-item loading" *ngIf="!loaded">
 				Loading...
 			</li>
-			<li class="list-group-item link" *ngFor="#link of links">
+			<li class="list-group-item link" *ngFor="#link of links; #i = index" [ngClass]="{pinned:link.pinned}">
 				<div class="voting">
-					<div (click)=upVote(link) class="arrow upvote" [ngClass]="{clicked:link.vote===1}">
-						<!-- <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> -->
-						<i class="icon-chevron_up"></i>
+					<div (click)=pin(i) class="arrow upvote" [ngClass]="{clicked:link.vote===1}">
+						<span title="Pin to this list and save for later"><i class="icon-pushpin"></i></span>
+						<!-- <i class="icon-chevron_up"></i> -->
 					</div>
 					<!-- <div class="label label-default label-pill">{{ link.score }}</div> -->
 					<div class="score">{{ link.score }}</div>
-					<div (click)=downVote(link) class="arrow downvote" [ngClass]="{clicked:link.vote===-1}">
-						<!-- <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> -->
-						<i class="icon-chevron_down"></i>
+					<div (click)=remove(i) class="arrow downvote" [ngClass]="{clicked:link.vote===-1}">
+						<!-- <i class="icon-chevron_down"></i> -->
+						<span title="Don't show this here"><i class="icon-cross_mark"></i></span>
+
 					</div>
 				</div>
 				<div class="body">

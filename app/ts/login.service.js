@@ -30,6 +30,7 @@ System.register(['angular2/core', 'angular2/http', './environment'], function(ex
                     this.http = http;
                     this._signupUrl = environment_1.Env._baseUrl + 'signup/';
                     this._signinUrl = environment_1.Env._baseUrl + 'signin/';
+                    this._currentUserUrl = environment_1.Env._baseUrl + 'currentUser/';
                 }
                 LoginService.prototype.signup = function (email, username, password, success, failure) {
                     var creds = "email=" + email + "&username=" + username + "&password=" + password;
@@ -41,16 +42,16 @@ System.register(['angular2/core', 'angular2/http', './environment'], function(ex
                     // .catch(failure);
                 };
                 LoginService.prototype.signin = function (username, password, success, failure) {
-                    var params = {
-                        username: username,
-                        password: password
-                    };
-                    var body = JSON.stringify(params);
-                    var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
+                    var creds = "username=" + username + "&password=" + password;
+                    var headers = new http_2.Headers();
+                    headers.append('Content-Type', 'application/x-www-form-urlencoded');
                     var options = new http_2.RequestOptions({ headers: headers });
-                    return this.http.post(this._signinUrl, body, options)
-                        .do(success)
-                        .catch(failure);
+                    return this.http.post(this._signinUrl, creds, options)
+                        .subscribe(success, failure, function () { return console.log('Authentication Complete'); });
+                };
+                LoginService.prototype.currentUser = function (success, failure) {
+                    return this.http.get(this._currentUserUrl)
+                        .subscribe(success, failure);
                 };
                 LoginService = __decorate([
                     core_1.Injectable(), 

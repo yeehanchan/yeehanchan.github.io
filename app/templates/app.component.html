@@ -14,8 +14,9 @@
 			<a [routerLink]="['Home']">TwoFish</a>
 		</div>
 		<!-- <a [routerLink]="['/Login']"><div class="signup">Sign Up</div></a> -->
-		<a [routerLink]="['/Login']" *ngIf=""><div class="login">Login</div></a>
-		<a [routerLink]="['/Login']"><div class="login">Login</div></a>
+		<a [routerLink]="['/Login']" *ngIf="!state.loggedIn"><div class="login">Login</div></a>
+		<div class="username" *ngIf="state.loggedIn">Hi, {{state.username}}</div>
+		<!-- <a [routerLink]="['/Login']"><div class="login">Login</div></a> -->
 		
 	</div>
 

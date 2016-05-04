@@ -62,20 +62,31 @@
 }
 
 /* Voting */
+.link.pinned {
+	background-color: #DAE9FB;
+}
 .link .voting {
 	float: right;
 	color: gray;
 }
 .link .voting > * {
-	display: block;
+	display: inline-block;
 }
 .voting {
 	text-align: center;
+}
+.voting .score {
+	position: relative;
+	top: -3px;
 }
 .voting .arrow {
 	margin: -8px 0;
 	font-size: 18px;
 	cursor: pointer;
+}
+.voting .upvote {	
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 .voting .upvote.clicked {
 	color: green;
@@ -83,6 +94,10 @@
 .voting .downvote.clicked {
 	color: red;
 }
+.pinned .icon-pushpin {
+	color: #2D79E1;
+}
+
 
 .add-link input {
 	font-size: 18px;

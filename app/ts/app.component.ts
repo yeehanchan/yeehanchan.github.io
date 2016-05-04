@@ -11,6 +11,7 @@ import {LinkService}		from './link.service';
 import {TopicService}		from './topic.service';
 import {TrajectoryService}	from './trajectory.service';
 import {LoginService}		from './login.service';
+import {StateService}		from './state.service';
 
 @Component({
 	selector: 'my-app',
@@ -21,11 +22,12 @@ import {LoginService}		from './login.service';
 		LinkService,
 		TopicService,
 		TrajectoryService,
-		LoginService
+		LoginService,
+		StateService
 	],
 	directives: [
 		ROUTER_DIRECTIVES
-	],
+	]
 })
 @RouteConfig([
 	{ path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true },
@@ -36,4 +38,18 @@ import {LoginService}		from './login.service';
 	{ path: '/trajectory/:trajectory_id/', name: 'Trajectory',   component: TrajectoryComponent },
 	{ path: '/trajectory/:trajectory_id/:topic_name/', name: 'TrajectoryTopic',   component: TopicComponent }
 ])
-export class AppComponent { }			
+export class AppComponent {
+	constructor(
+        private _loginService: LoginService,
+		public state: StateService
+	){
+	// 	_loginService.currentUser(
+	// 			response => { 
+	// 				// console.log(response);
+	// 				state.loggedIn = true;
+	// 				state.username = response._body;
+	// 			},
+	// 			()=> undefined
+	// 		)
+	}
+}			

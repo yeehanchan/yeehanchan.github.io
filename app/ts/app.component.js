@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './topic.component', './topic_list.component', './home.component', './trajectory.component', './login.component', 'angular2/http', './link.service', './topic.service', './trajectory.service', './login.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './topic.component', './topic_list.component', './home.component', './trajectory.component', './login.component', 'angular2/http', './link.service', './topic.service', './trajectory.service', './login.service', './state.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './topic.component', './top
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, topic_component_1, topic_list_component_1, home_component_1, trajectory_component_1, login_component_1, http_1, link_service_1, topic_service_1, trajectory_service_1, login_service_1;
+    var core_1, router_1, topic_component_1, topic_list_component_1, home_component_1, trajectory_component_1, login_component_1, http_1, link_service_1, topic_service_1, trajectory_service_1, login_service_1, state_service_1;
     var AppComponent;
     return {
         setters:[
@@ -49,10 +49,23 @@ System.register(['angular2/core', 'angular2/router', './topic.component', './top
             },
             function (login_service_1_1) {
                 login_service_1 = login_service_1_1;
+            },
+            function (state_service_1_1) {
+                state_service_1 = state_service_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent() {
+                function AppComponent(_loginService, state) {
+                    this._loginService = _loginService;
+                    this.state = state;
+                    // 	_loginService.currentUser(
+                    // 			response => { 
+                    // 				// console.log(response);
+                    // 				state.loggedIn = true;
+                    // 				state.username = response._body;
+                    // 			},
+                    // 			()=> undefined
+                    // 		)
                 }
                 AppComponent = __decorate([
                     core_1.Component({
@@ -64,11 +77,12 @@ System.register(['angular2/core', 'angular2/router', './topic.component', './top
                             link_service_1.LinkService,
                             topic_service_1.TopicService,
                             trajectory_service_1.TrajectoryService,
-                            login_service_1.LoginService
+                            login_service_1.LoginService,
+                            state_service_1.StateService
                         ],
                         directives: [
                             router_1.ROUTER_DIRECTIVES
-                        ],
+                        ]
                     }),
                     router_1.RouteConfig([
                         { path: '/home', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
@@ -79,7 +93,7 @@ System.register(['angular2/core', 'angular2/router', './topic.component', './top
                         { path: '/trajectory/:trajectory_id/', name: 'Trajectory', component: trajectory_component_1.TrajectoryComponent },
                         { path: '/trajectory/:trajectory_id/:topic_name/', name: 'TrajectoryTopic', component: topic_component_1.TopicComponent }
                     ]), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [login_service_1.LoginService, state_service_1.StateService])
                 ], AppComponent);
                 return AppComponent;
             }());

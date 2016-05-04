@@ -10,6 +10,7 @@ export class LoginService {
 
   private _signupUrl = Env._baseUrl + 'signup/';
   private _signinUrl = Env._baseUrl + 'signin/';
+  private _currentUserUrl = Env._baseUrl + 'currentUser/';
 
   signup(email: string, username: string, password: string, success, failure) {
     var creds = "email=" + email + "&username=" + username + "&password=" + password;
@@ -28,15 +29,22 @@ export class LoginService {
   }
 
   signin(username: string, password: string, success, failure) {
-    var params = {
-      username: username,
-      password: password
-    };
-    let body = JSON.stringify(params);
-    let headers = new Headers({ 'Content-Type': 'application/json' });
+    var creds = "username=" + username + "&password=" + password;
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
     let options = new RequestOptions({ headers: headers });
-    return this.http.post(this._signinUrl, body, options)
-      .do(success)
-      .catch(failure);
+    return this.http.post(this._signinUrl, creds, options)
+        .subscribe(
+        success,
+        failure,
+        () => console.log('Authentication Complete')
+      );
+  }
+
+  currentUser(success, failure) {
+    return this.http.get(this._currentUserUrl)
+      .subscribe(success, failure);
+
   }
 }
