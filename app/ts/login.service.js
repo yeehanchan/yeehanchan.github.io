@@ -25,12 +25,16 @@ System.register(['angular2/core', 'angular2/http', './environment'], function(ex
                 environment_1 = environment_1_1;
             }],
         execute: function() {
+            // import localStorage from 'localStorage';
             LoginService = (function () {
                 function LoginService(http) {
                     this.http = http;
+                    this.loggedIn = false;
                     this._signupUrl = environment_1.Env._baseUrl + 'signup/';
                     this._signinUrl = environment_1.Env._baseUrl + 'signin/';
                     this._currentUserUrl = environment_1.Env._baseUrl + 'currentUser/';
+                    this.loggedIn = !!localStorage.getItem('auth_token');
+                    console.log(this.loggedIn);
                 }
                 LoginService.prototype.signup = function (email, username, password, success, failure) {
                     var creds = "email=" + email + "&username=" + username + "&password=" + password;
@@ -41,17 +45,50 @@ System.register(['angular2/core', 'angular2/http', './environment'], function(ex
                     // .do (success)
                     // .catch(failure);
                 };
+                // login(username, password) {
+                //     var params = {
+                //           username: username,
+                //           password: password
+                //     };
+                //     let body = JSON.stringify(params);
+                //     let headers = new Headers();
+                //     headers.append('Content-Type', 'application/json');
+                //     return this.http
+                //       .post(
+                //         this._signinUrl, 
+                //         body, 
+                //         { headers }
+                //       )
+                //       .map(res => res.json())
+                //       .map((res) => {
+                //         if (res.success) {
+                //           localStorage.setItem('auth_token', res.auth_token);
+                //           this.loggedIn = true;
+                //         }
+                //          return res.success;
+                //       });
+                //   }
+                LoginService.prototype.logout = function () {
+                    localStorage.removeItem('auth_token');
+                    this.loggedIn = false;
+                };
                 LoginService.prototype.signin = function (username, password, success, failure) {
                     var creds = "username=" + username + "&password=" + password;
                     var headers = new http_2.Headers();
                     headers.append('Content-Type', 'application/x-www-form-urlencoded');
                     var options = new http_2.RequestOptions({ headers: headers });
                     return this.http.post(this._signinUrl, creds, options)
-                        .subscribe(success, failure, function () { return console.log('Authentication Complete'); });
+                        .subscribe(function (response) {
+                        // localStorage.setItem('auth_token', res.auth_token);
+                        success(response);
+                    }, failure, function () { return console.log('Authentication Complete'); });
                 };
                 LoginService.prototype.currentUser = function (success, failure) {
                     return this.http.get(this._currentUserUrl)
                         .subscribe(success, failure);
+                };
+                LoginService.prototype.isLoggedIn = function () {
+                    return this.loggedIn;
                 };
                 LoginService = __decorate([
                     core_1.Injectable(), 

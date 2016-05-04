@@ -5,6 +5,7 @@ import {TopicListComponent}	from './topic_list.component';
 import {HomeComponent}		from './home.component';
 import {TrajectoryComponent}from './trajectory.component';
 import {LoginComponent} 	from './login.component';
+import {ProfileComponent} 	from './profile.component';
 
 import {HTTP_PROVIDERS}		from 'angular2/http';
 import {LinkService}		from './link.service';
@@ -32,6 +33,7 @@ import {StateService}		from './state.service';
 @RouteConfig([
 	{ path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true },
 	{ path: '/login', name: 'Login', component: LoginComponent },
+	{ path: '/profile', name: 'Profile', component: ProfileComponent },
 	{ path: '/topic/:topic_name/', name: 'Topic',   component: TopicComponent },
 	{ path: '/topic/:search_string/:topic_name/', name: 'TopicWithSearch', component: TopicComponent },
 	{ path: '/searchTopics/:search_string/', name: 'Search',   component: TopicListComponent },

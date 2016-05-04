@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './topic.component', './topic_list.component', './home.component', './trajectory.component', './login.component', 'angular2/http', './link.service', './topic.service', './trajectory.service', './login.service', './state.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './topic.component', './topic_list.component', './home.component', './trajectory.component', './login.component', './profile.component', 'angular2/http', './link.service', './topic.service', './trajectory.service', './login.service', './state.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './topic.component', './top
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, topic_component_1, topic_list_component_1, home_component_1, trajectory_component_1, login_component_1, http_1, link_service_1, topic_service_1, trajectory_service_1, login_service_1, state_service_1;
+    var core_1, router_1, topic_component_1, topic_list_component_1, home_component_1, trajectory_component_1, login_component_1, profile_component_1, http_1, link_service_1, topic_service_1, trajectory_service_1, login_service_1, state_service_1;
     var AppComponent;
     return {
         setters:[
@@ -34,6 +34,9 @@ System.register(['angular2/core', 'angular2/router', './topic.component', './top
             },
             function (login_component_1_1) {
                 login_component_1 = login_component_1_1;
+            },
+            function (profile_component_1_1) {
+                profile_component_1 = profile_component_1_1;
             },
             function (http_1_1) {
                 http_1 = http_1_1;
@@ -87,6 +90,7 @@ System.register(['angular2/core', 'angular2/router', './topic.component', './top
                     router_1.RouteConfig([
                         { path: '/home', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
                         { path: '/login', name: 'Login', component: login_component_1.LoginComponent },
+                        { path: '/profile', name: 'Profile', component: profile_component_1.ProfileComponent },
                         { path: '/topic/:topic_name/', name: 'Topic', component: topic_component_1.TopicComponent },
                         { path: '/topic/:search_string/:topic_name/', name: 'TopicWithSearch', component: topic_component_1.TopicComponent },
                         { path: '/searchTopics/:search_string/', name: 'Search', component: topic_list_component_1.TopicListComponent },
