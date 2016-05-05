@@ -13,6 +13,7 @@ import {TopicService}		from './topic.service';
 import {TrajectoryService}	from './trajectory.service';
 import {LoginService}		from './login.service';
 import {StateService}		from './state.service';
+// import {SearchService}		from './search.service';
 
 @Component({
 	selector: 'my-app',
