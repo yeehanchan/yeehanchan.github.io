@@ -6,6 +6,7 @@
 				placeholder="Username">
 			<input type="password" class="form-control item" #lpassword
 				placeholder="Password">
+			<div class="error-message" *ngIf="signinErrorMessage">{{signinErrorMessage}}</div>
 			<button class="item btn btn-primary btn-block buttons" (click)=signin(lusername.value,lpassword.value)>Login</button>	
 		</div>
 		<div class="form-list form-login list-group">
@@ -16,6 +17,7 @@
 				placeholder="Username">
 			<input type="password" class="form-control item" #password
 				placeholder="Password">
+			<div class="error-message" *ngIf="signupErrorMessage">{{signupErrorMessage}}</div>
 			<button class="item btn btn-primary btn-block buttons" (click)=signup(email.value,username.value,password.value)>Create Account</button>	
 		</div>
 	</div>

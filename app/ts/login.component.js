@@ -39,20 +39,20 @@ System.register(['angular2/core', 'angular2/router', './login.service', './state
                     var _this = this;
                     console.log(email, username, password);
                     console.log(this._loginService.signup(email, username, password, function (response) {
-                        console.log(response);
+                        // localStorage.setItem('auth_token', res.auth_token);
+                        // console.log(response);
                         _this.state.loggedIn = true;
                         _this.state.username = username;
                         _this._router.navigate(['/Home', {}]);
-                    }, function (error) { return _this.errorMessage = error; }));
+                    }, function (error) { return _this.signupErrorMessage = error; }));
                 };
                 LoginComponent.prototype.signin = function (username, password) {
                     var _this = this;
                     console.log(this._loginService.signin(username, password, function (response) {
-                        console.log(response);
                         _this.state.loggedIn = true;
                         _this.state.username = username;
                         _this._router.navigate(['/Home', {}]);
-                    }, function (error) { return _this.errorMessage = error; }));
+                    }, function (error) { return _this.signinErrorMessage = error; }));
                 };
                 LoginComponent = __decorate([
                     core_1.Component({

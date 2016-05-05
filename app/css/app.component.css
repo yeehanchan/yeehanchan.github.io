@@ -45,6 +45,8 @@
 	display: inline;
 	float:right;
 	padding: 6px 16px;	
+	color: #f77a76;
+	font-size: 14px;
 }
 .navbar .login {
 	color: #f77a76;

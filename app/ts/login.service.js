@@ -34,7 +34,6 @@ System.register(['angular2/core', 'angular2/http', './environment'], function(ex
                     this._signinUrl = environment_1.Env._baseUrl + 'signin/';
                     this._currentUserUrl = environment_1.Env._baseUrl + 'currentUser/';
                     this.loggedIn = !!localStorage.getItem('auth_token');
-                    console.log(this.loggedIn);
                 }
                 LoginService.prototype.signup = function (email, username, password, success, failure) {
                     var creds = "email=" + email + "&username=" + username + "&password=" + password;
@@ -78,10 +77,7 @@ System.register(['angular2/core', 'angular2/http', './environment'], function(ex
                     headers.append('Content-Type', 'application/x-www-form-urlencoded');
                     var options = new http_2.RequestOptions({ headers: headers });
                     return this.http.post(this._signinUrl, creds, options)
-                        .subscribe(function (response) {
-                        // localStorage.setItem('auth_token', res.auth_token);
-                        success(response);
-                    }, failure, function () { return console.log('Authentication Complete'); });
+                        .subscribe(function (response) { return success(response.text()); }, function (error) { return failure(error.text()); });
                 };
                 LoginService.prototype.currentUser = function (success, failure) {
                     return this.http.get(this._currentUserUrl)

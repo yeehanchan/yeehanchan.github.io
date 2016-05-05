@@ -61,14 +61,11 @@ System.register(['angular2/core', 'angular2/router', './topic.component', './top
                 function AppComponent(_loginService, state) {
                     this._loginService = _loginService;
                     this.state = state;
-                    // 	_loginService.currentUser(
-                    // 			response => { 
-                    // 				// console.log(response);
-                    // 				state.loggedIn = true;
-                    // 				state.username = response._body;
-                    // 			},
-                    // 			()=> undefined
-                    // 		)
+                    _loginService.currentUser(function (response) {
+                        // console.log(response);
+                        state.loggedIn = true;
+                        state.username = response._body;
+                    }, function () { return undefined; });
                 }
                 AppComponent = __decorate([
                     core_1.Component({

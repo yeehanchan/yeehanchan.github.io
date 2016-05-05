@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit{
         public state: StateService
     ) {}
 
-    errorMessage: string;
+    signupErrorMessage: string;
+    signinErrorMessage: string;
 
     ngOnInit() { 
     }
@@ -27,23 +28,24 @@ export class LoginComponent implements OnInit{
         console.log(email, username, password);
         console.log(this._loginService.signup(email, username, password,
                     response => {
-                        console.log(response);
+                        // localStorage.setItem('auth_token', res.auth_token);
+                        // console.log(response);
                         this.state.loggedIn = true;
                         this.state.username = username;
                         this._router.navigate(['/Home', {}]);
                     },
-                    error => this.errorMessage = error));
+                    error => this.signupErrorMessage = error
+                ));
     }
 
     signin(username, password) {
         console.log(this._loginService.signin(username, password,
             response => {
-                console.log(response);
                 this.state.loggedIn = true;
                 this.state.username = username;
                 this._router.navigate(['/Home', {}]);
             },
-            error => this.errorMessage = error));
+            error => this.signinErrorMessage = error));
     }
 
 

@@ -45,13 +45,13 @@ export class AppComponent {
         private _loginService: LoginService,
 		public state: StateService
 	){
-	// 	_loginService.currentUser(
-	// 			response => { 
-	// 				// console.log(response);
-	// 				state.loggedIn = true;
-	// 				state.username = response._body;
-	// 			},
-	// 			()=> undefined
-	// 		)
+		_loginService.currentUser(
+				response => { 
+					// console.log(response);
+					state.loggedIn = true;
+					state.username = response._body;
+				},
+				()=> undefined
+			)
 	}
 }			

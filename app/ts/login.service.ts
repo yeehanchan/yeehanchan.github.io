@@ -11,7 +11,6 @@ export class LoginService {
   private loggedIn = false;
   constructor(private http: Http) {
       this.loggedIn = !!localStorage.getItem('auth_token');
-      console.log(this.loggedIn);
   }
 
   private _signupUrl = Env._baseUrl + 'signup/';
@@ -72,18 +71,14 @@ export class LoginService {
     let options = new RequestOptions({ headers: headers });
     return this.http.post(this._signinUrl, creds, options)
         .subscribe(
-        response => {
-          // localStorage.setItem('auth_token', res.auth_token);
-          success(response);
-        },
-        failure,
-        () => console.log('Authentication Complete')
+          response => success(response.text()),
+          error => failure(error.text())
       );
   }
 
   currentUser(success, failure) {
     return this.http.get(this._currentUserUrl)
-      .subscribe(success, failure);
+      .subscribe(success,failure);
   }
 
   isLoggedIn() {
