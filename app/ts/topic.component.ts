@@ -4,12 +4,15 @@ import {Link} from './link';
 import {Topic} from './topic';
 import {TopicService} from './topic.service';
 import {LinkService} from './link.service'
+import {CommentsComponent} from './comment.component'
+import {StateService}		from './state.service';
 
 @Component({
 	templateUrl: 'app/templates/topic.component.html',
 	styleUrls: ['app/css/topic.component.css'],
     directives: [
-        ROUTER_DIRECTIVES
+        ROUTER_DIRECTIVES,
+        CommentsComponent
     ],
 })
 export class TopicComponent implements OnInit{
@@ -20,12 +23,14 @@ export class TopicComponent implements OnInit{
 	public topic: Topic;
 	public loaded: boolean;
 	public currentLink: Link;
+	public showAddLink: boolean;
 
 	constructor(
 		private _router: Router,
 		private _routeParams: RouteParams, 
 		private _linkService: LinkService,
-		private _topicService: TopicService) {
+		private _topicService: TopicService,
+		public state: StateService) {
 			this.links = new Array<Link>();
 	}
 
@@ -45,7 +50,9 @@ export class TopicComponent implements OnInit{
   	getTopic() {
 		this._topicService.getTopic(this.topicName)
 			.subscribe( 
-				topic => this.topic = topic,
+				topic => {
+					this.topic = topic;
+				},
               	error => this.errorMessage = <any>error
 			)
   	}
@@ -63,6 +70,10 @@ export class TopicComponent implements OnInit{
 
   	openLink(link) {
 		this.currentLink = link;
+  	}
+
+  	toggleAddLink() {
+		this.showAddLink = !this.showAddLink;
   	}
 
 	addLink(newLink, newTitle, newTopic=1) {

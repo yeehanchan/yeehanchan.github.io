@@ -3,7 +3,7 @@
 		<ul class="list-group">
 			<li class="list-group-item title">
 				<h2>
-					<span *ngIf="searchString !== 'null'"><a [routerLink]="['Search', { search_string: searchString }]">{{searchString}}</a> ></span><span *ngIf="trajectoryId"><a [routerLink]="['Trajectory', { trajectory_id: trajectoryId }]"><i class="icon-arrow_left"></i></a> </span>{{topicName}}
+					<span *ngIf="searchString !== 'null'"><a [routerLink]="['Search', { search_string: searchString }]">{{searchString}}</a> ></span><span *ngIf="trajectoryId"><a [routerLink]="['Trajectory', { trajectory_id: trajectoryId }]"><i class="icon-arrow-left"></i></a> </span>{{topicName}}
 				</h2>
 			</li>
 			<li class="list-group-item no-links" *ngIf="links.length === 0 && loaded">
@@ -22,7 +22,7 @@
 					<div class="score">{{ link.score }}</div>
 					<div (click)=remove(i) class="arrow downvote" [ngClass]="{clicked:link.vote===-1}">
 						<!-- <i class="icon-chevron_down"></i> -->
-						<span title="Don't show this here"><i class="icon-cross_mark"></i></span>
+						<span title="Don't show this here"><i class="icon-remove"></i></span>
 
 					</div>
 				</div>
@@ -31,9 +31,15 @@
 					<h3 class="link"><a href="{{link.url}}" target="_blank">{{link.title}}</a> <span class="domain">{{link.domain()}}</span></h3>
 				</div>
 			</li>
+			<li class="list-group-item btn-add-link" (click)="toggleAddLink()" *ngIf="!showAddLink">+ Add a link</li>
 		</ul>
-		<div class="form-list add-link list-group">
-			<div class="list-group-item title"><h3>Add another useful resource:</h3></div>
+		<div class="form-list add-link list-group" *ngIf="showAddLink">
+			<div class="list-group-item title">
+				<i class="icon-remove" (click)="toggleAddLink()" aria-hidden="true"></i>
+				<h3>
+					Add a link:
+				</h3>
+			</div>
 			<input type="text" class="form-control item" #newTitle
 		  		(keyup.enter)="addLink(newURL,newTitle,topic.pk)"
 		  		placeholder="A descriptive title">
@@ -41,6 +47,9 @@
 		  		(keyup.enter)="addLink(newURL,newTitle,topic.pk)"
 		  		placeholder="URL">
 			<button class="item btn btn-primary btn-block buttons" (click)=addLink(newURL,newTitle,topic.pk)>Add</button>	
+		</div>
+		<div *ngIf="topic">
+			<comments [objectType]='"topic"' [objectPk]='topic.pk'></comments>
 		</div>
 	</div>
 	<!-- <iframe *ngIf="currentLink" [src]="currentLink.url"></iframe> -->

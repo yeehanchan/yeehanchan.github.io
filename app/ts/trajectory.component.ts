@@ -1,11 +1,16 @@
 import {Component, OnInit} from 'angular2/core';
-import {Router,RouteParams} from 'angular2/router'
+import {Router, RouteParams, ROUTER_DIRECTIVES} from 'angular2/router'
 import {Trajectory} from './trajectory';
 import {TrajectoryService} from './trajectory.service';
+import {CommentsComponent} from './comment.component'
 
 @Component({
 	templateUrl: 'app/templates/trajectory.component.html',
-	styleUrls: ['app/css/trajectory.component.css']
+	styleUrls: ['app/css/trajectory.component.css'],
+    directives: [
+        ROUTER_DIRECTIVES,
+        CommentsComponent
+    ],
 })
 export class TrajectoryComponent implements OnInit{
 	public trajectoryId: string;

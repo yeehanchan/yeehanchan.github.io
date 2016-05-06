@@ -8,6 +8,11 @@
 	/*width: 300px;*/
 	/*float: left;*/
 }
+.link-list h2 .icon-arrow-left {
+	font-size: 75%;	
+    position: relative;
+    top: -3px;
+}
 .buttons{
 	/*opacity: 0.5;
 	/*border-color:#b3cde0; */
@@ -99,6 +104,22 @@
 }
 
 
+/* Add link */
 .add-link input {
 	font-size: 18px;
+}
+.btn-add-link {
+	color: #777;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #DDD;
+	cursor: pointer;
+}
+.btn-add-link:hover {
+	color: #333;
+}
+.add-link .icon-remove {
+	float: right;
+	cursor: pointer;
+	color: #777;
 }

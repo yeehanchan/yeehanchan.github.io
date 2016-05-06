@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './topic.service', './link.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './topic.service', './link.service', './comment.component', './state.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './topic.service', './link.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, topic_service_1, link_service_1;
+    var core_1, router_1, topic_service_1, link_service_1, comment_component_1, state_service_1;
     var TopicComponent;
     return {
         setters:[
@@ -25,14 +25,21 @@ System.register(['angular2/core', 'angular2/router', './topic.service', './link.
             },
             function (link_service_1_1) {
                 link_service_1 = link_service_1_1;
+            },
+            function (comment_component_1_1) {
+                comment_component_1 = comment_component_1_1;
+            },
+            function (state_service_1_1) {
+                state_service_1 = state_service_1_1;
             }],
         execute: function() {
             TopicComponent = (function () {
-                function TopicComponent(_router, _routeParams, _linkService, _topicService) {
+                function TopicComponent(_router, _routeParams, _linkService, _topicService, state) {
                     this._router = _router;
                     this._routeParams = _routeParams;
                     this._linkService = _linkService;
                     this._topicService = _topicService;
+                    this.state = state;
                     this.links = new Array();
                 }
                 TopicComponent.prototype.ngOnInit = function () {
@@ -48,7 +55,9 @@ System.register(['angular2/core', 'angular2/router', './topic.service', './link.
                 TopicComponent.prototype.getTopic = function () {
                     var _this = this;
                     this._topicService.getTopic(this.topicName)
-                        .subscribe(function (topic) { return _this.topic = topic; }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (topic) {
+                        _this.topic = topic;
+                    }, function (error) { return _this.errorMessage = error; });
                 };
                 TopicComponent.prototype.getLinkList = function () {
                     var _this = this;
@@ -61,6 +70,9 @@ System.register(['angular2/core', 'angular2/router', './topic.service', './link.
                 };
                 TopicComponent.prototype.openLink = function (link) {
                     this.currentLink = link;
+                };
+                TopicComponent.prototype.toggleAddLink = function () {
+                    this.showAddLink = !this.showAddLink;
                 };
                 TopicComponent.prototype.addLink = function (newLink, newTitle, newTopic) {
                     var _this = this;
@@ -116,10 +128,11 @@ System.register(['angular2/core', 'angular2/router', './topic.service', './link.
                         templateUrl: 'app/templates/topic.component.html',
                         styleUrls: ['app/css/topic.component.css'],
                         directives: [
-                            router_1.ROUTER_DIRECTIVES
+                            router_1.ROUTER_DIRECTIVES,
+                            comment_component_1.CommentsComponent
                         ],
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, link_service_1.LinkService, topic_service_1.TopicService])
+                    __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, link_service_1.LinkService, topic_service_1.TopicService, state_service_1.StateService])
                 ], TopicComponent);
                 return TopicComponent;
             }());

@@ -25,11 +25,8 @@
 				</ul>
 			</li>
 		</ul>
-<!-- 		<div class="form-list add-topic">
-			<input type="text" class="form-control item" #newTopicName
-		  		(keyup.enter)="addTopic(newTopicName.value)"
-		  		placeholder="Name">
-			<button class="item btn btn-primary btn-block buttons" (click)=addTopic(newTopicName.value)>Add Topic</button>	
-		</div> -->
+		<div *ngIf="trajectory">
+			<comments [objectType]='"trajectory"' [objectPk]='trajectory.pk'></comments>
+		</div>
 	</div>
 </div>
